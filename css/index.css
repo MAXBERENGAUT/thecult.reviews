@@ -1,0 +1,65 @@
+* {
+    font-family: 'Raleway', Verdana;
+    text-transform: lowercase;
+    color: white;
+    word-spacing: 0.25em;
+    line-height: 1.5em;
+}
+
+body, html {
+    overflow-x: hidden;
+    background-color: black;
+}
+
+footer {
+    position: fixed;
+    display: block;
+    text-align: center;
+    font-size: 0.85em;
+    letter-spacing: 0.03em;
+    word-spacing: 0.5em;
+    left: 50%;
+    bottom: 0;
+    margin: 0 auto;
+    transform: translate(-50%, 0);
+}
+
+#menu {
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+    position: fixed;
+    height: 80%;
+    top: 12.5%;
+}
+
+.fade-in {
+    -webkit-animation: fade-in 2s forwards;
+    -moz-animation: fade-in 2s forwards;
+    -o-animation: fade-in 2s forwards;
+    -ms-animation: fade-in 2s forwards;
+    animation: fade-in 2s forwards;
+}
+
+.item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7em;
+    width: 300px;
+    border: 2px solid white;
+    margin: 0 30px;
+}
+
+@-webkit-keyframes  fade-out { to { opacity: 0; }}
+@-moz-keyframes     fade-out { to { opacity: 0; }}
+@-o-keyframes       fade-out { to { opacity: 0; }}
+@-ms-keyframes      fade-out { to { opacity: 0; }}
+@keyframes          fade-out { to { opacity: 0; }}
+
+@-webkit-keyframes  fade-in { from { opacity: 0; } to { opacity: 1; }}
+@-moz-keyframes     fade-in { from { opacity: 0; } to { opacity: 1; }}
+@-o-keyframes       fade-in { from { opacity: 0; } to { opacity: 1; }}
+@-ms-keyframes      fade-in { from { opacity: 0; } to { opacity: 1; }}
+@keyframes          fade-in { from { opacity: 0; } to { opacity: 1; }}
