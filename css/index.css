@@ -54,6 +54,24 @@ footer {
     box-shadow: 10px 10px 10px #555555;
 }
 
+.tilt{
+    transition        : 1.0s ease all;
+	-moz-transition   : 1.0s ease all;
+	-webkit-transition: 1.0s ease all;
+}
+
+.tilt:hover{
+	transform               : rotateX(10deg) rotateY(-10deg);
+	-moz-transform          : rotateX(10deg) rotateY(-10deg);
+    -webkit-transform       : rotateX(10deg) rotateY(-10deg);
+	transform-origin        : center;
+	-moz-transform-origin   : center;
+	-webkit-transform-origin: center;
+	transition              : transform 1.0s ease all;
+	-moz-transition         : -moz-transform 1.0s ease all;
+	-webkit-transition      : -webkit-transform 1.0s ease all;
+}
+
 .cover-f {
     max-height: 100%;
     max-width: 100%;
