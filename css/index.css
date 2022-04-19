@@ -51,6 +51,7 @@ footer {
     word-wrap: break-word;
     white-space: normal;
     overflow: hidden;
+    box-shadow: 10px 10px 10px #555555;
 }
 
 .cover-f {
