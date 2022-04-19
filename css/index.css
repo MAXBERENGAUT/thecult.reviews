@@ -1,6 +1,5 @@
 * {
     font-family: 'Raleway', Verdana;
-    text-transform: lowercase;
     color: white;
     word-spacing: 0.25em;
     line-height: 1.5em;
@@ -43,13 +42,36 @@ footer {
 
 .item {
     position: relative;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    text-align: center;
     font-size: 1.7em;
     width: 300px;
     border: 2px solid white;
     margin: 0 30px;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow: hidden;
+}
+
+.cover-f {
+    max-height: 100%;
+    max-width: 100%;
+    border-bottom: 2px solid white;
+}
+
+.cover-r {
+    max-height: calc(70% - 4px);
+    max-width: calc(70% - 4px);
+    margin: 15% 15%;
+    border: 2px solid white;
+}
+
+.yt-logo {
+    max-width: 30%;
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 @-webkit-keyframes  fade-out { to { opacity: 0; }}
