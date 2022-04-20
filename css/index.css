@@ -42,13 +42,11 @@ footer {
 
 .item {
     position: relative;
-    justify-content: center;
     text-align: center;
-    font-size: 1.7em;
+    font-size: 150%;
     width: 300px;
     border: 2px solid white;
     margin: 0 30px;
-    word-wrap: break-word;
     white-space: normal;
     overflow: hidden;
     box-shadow: 10px 10px 10px #555555;
@@ -83,6 +81,25 @@ footer {
     max-width: calc(70% - 4px);
     margin: 15% 15%;
     border: 2px solid white;
+}
+
+.artist {
+    
+}
+
+.song {
+
+}
+
+.album {
+    font-size: 90%;
+    font-style: italic;
+    color: lightgray;
+}
+
+.year {
+    font-size: 80%;
+    color: lightgray;
 }
 
 .yt-logo {
