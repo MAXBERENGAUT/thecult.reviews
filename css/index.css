@@ -23,6 +23,14 @@ footer {
     transform: translate(-50%, 0);
 }
 
+#video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
 #menu {
     white-space: nowrap;
     display: flex;
@@ -42,6 +50,7 @@ footer {
 
 .item {
     position: relative;
+    background-color: black;
     text-align: center;
     font-size: 150%;
     width: 300px;
@@ -68,6 +77,16 @@ footer {
 	transition              : transform 1.0s ease all;
 	-moz-transition         : -moz-transform 1.0s ease all;
 	-webkit-transition      : -webkit-transform 1.0s ease all;
+}
+
+.highlight {
+    transition        : 1.0s ease all;
+	-moz-transition   : 1.0s ease all;
+	-webkit-transition: 1.0s ease all;
+}
+
+.highlight:hover {
+    box-shadow: 5px 5px 50px #555555;
 }
 
 .cover-f {
@@ -103,7 +122,7 @@ footer {
 }
 
 .yt-logo {
-    max-width: 30%;
+    max-width: 15%;
     position: absolute;
     bottom: 2%;
     left: 50%;
