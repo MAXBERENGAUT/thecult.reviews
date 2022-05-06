@@ -1,5 +1,7 @@
 // OPTIONS
 
+const REVIEWS_URL = './json/reviews.json'
+
 const updates_per_second = 60;
 const menu_speed_max = 8;
 const menu_resistance = 10;
@@ -7,13 +9,11 @@ const item_width = 300;
 const item_margin = 30;
 const item_border = 2;
 
-// var menu_offset = document.documentElement.clientWidth / 4;
 var menu_offset = 0;
 
 //
 
 var menu = document.getElementById("menu");
-var items = document.getElementsByClassName("item");
 
 var mouse_X = document.documentElement.clientWidth / 2;
 var menu_hovered_over = false; 
@@ -23,7 +23,11 @@ var menu_width = 0;
 
 var update_interval;
 
+generateItems(getJSON(REVIEWS_URL));
+var items = document.getElementsByClassName("item");
+
 initMenu();
+
 
 function initMenu(){
   for(let i = 0; i < items.length; i++) {
@@ -33,6 +37,7 @@ function initMenu(){
   doubleMenuItems();
   updateMenu();
 }
+
 
 // update menu position/speed
 function updateMenu(){
@@ -87,6 +92,7 @@ function updateMenu(){
   menu.style.transform = `translateX(${menu_offset}px)`;
 }
   
+
 function doubleMenuItems(){
   let duplicates = [];
   for (let item of items){ duplicates.push(item.cloneNode(true)); }
@@ -95,6 +101,69 @@ function doubleMenuItems(){
   // update internally stored menu width
   menu_width *= 2;
 }
+
+
+// via https://stackoverflow.com/questions/19440589/parsing-json-data-from-a-url
+function getJSON(url) {
+  let resp  = '' ;
+  let xmlHttp = new XMLHttpRequest();
+
+  if(xmlHttp != null)
+  {
+      xmlHttp.open( "GET", url, false );
+      xmlHttp.send( null );
+      resp = xmlHttp.responseText;
+  }
+
+  return JSON.parse(resp);
+}
+
+
+function generateItems(reviews){
+  for (let i=0; i < reviews.length; i++){
+    let review = reviews[i];
+
+    let item = document.createElement("div");
+    item.classList.add("item", "highlight");
+
+    let cover = document.createElement("img");
+    cover.src = review["cover"];
+    cover.classList.add("cover", "tilt");
+
+    // build and add each item element
+    function createP(type){
+      let p = document.createElement("p");
+      p.innerHTML = review[type];
+      p.classList.add(type);
+      return p;
+    }
+
+    let song = createP("song");
+    song.textContent = "‘" + song.textContent + "’";
+    
+    let artist = createP("artist");
+    let album = createP("album");
+    let year = createP("year");
+
+    let link = document.createElement("a");
+    link.href = review["link"];
+
+    let yt_logo = document.createElement("img");
+    yt_logo.src = "./media/yt_logo_outline.svg";
+    yt_logo.classList.add("yt-logo");
+
+    link.append(yt_logo);
+
+    item.append(cover);
+    item.append(artist);
+    item.append(song);
+    item.append(album);
+    item.append(year);
+    item.append(link);
+    menu.append(item);
+  }
+}
+
 
 // set animation in all browsers
 function setAnimation(node, animationText){
@@ -105,10 +174,12 @@ function setAnimation(node, animationText){
   node.style["animation"] = animationText;
 }
 
+
 // on mouse move, record mouse x position
 document.addEventListener('mousemove', e => {
   mouse_X = e.clientX;
 });
+
 
 // on mouse enter menu, start/continue updateMenu
 menu.addEventListener('mouseenter', () => {
@@ -118,6 +189,7 @@ menu.addEventListener('mouseenter', () => {
     update_interval = setInterval(updateMenu, 1000 / updates_per_second);
   }
 });
+
 
 // on mouse leave menu, update menu_hovered_over
 menu.addEventListener('mouseleave', () => {

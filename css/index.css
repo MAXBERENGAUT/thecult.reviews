@@ -95,7 +95,7 @@ footer {
     border-bottom: 2px solid white;
 }
 
-.cover-r {
+.cover {
     max-height: calc(70% - 4px);
     max-width: calc(70% - 4px);
     margin: 15% 15%;
