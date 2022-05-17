@@ -4,47 +4,47 @@
         "artist": "Pink Floyd",
         "album": "Dark Side of the Moon",
         "year": "1973",
-        "cover": "./media/dsotm.jpeg",
-        "link": "https://youtu.be/tbdpv7G_PPg"
+        "cover": "dsotm.jpeg",
+        "yt_id": "tbdpv7G_PPg"
     },
     {
         "song": "Aphasia",
         "artist": "Pinegrove",
         "album": "Cardinal",
         "year": "2016",
-        "cover": "./media/cardinal.jfif",
-        "link": "https://youtu.be/5N-CdaTYtMQ"
+        "cover": "cardinal.jfif",
+        "yt_id": "5N-CdaTYtMQ"
     },
     {
         "song": "Give Up Baby Go",
         "artist": "Peach Pit",
         "album": "From 2 to 3",
         "year": "2022",
-        "cover": "./media/f2t3.jfif",
-        "link": "https://youtu.be/OPyrxs_fDCA"
+        "cover": "f2t3.jfif",
+        "yt_id": "OPyrxs_fDCA"
     },
     {
         "song": "The World is Crowded",
         "artist": "Unknown Mortal Orchestra",
         "album": "Multi-Love",
         "year": "2015",
-        "cover": "./media/multilove.jpg",
-        "link": "https://youtu.be/iPrCVCoSqCA"
+        "cover": "multilove.jpg",
+        "yt_id": "iPrCVCoSqCA"
     },
     {
         "song": "Lilly",
         "artist": "Toro Y Moi",
         "album": "What For?",
         "year": "2015",
-        "cover": "./media/whatfor.jpg",
-        "link": "https://youtu.be/ILvMOC4H9EM"
+        "cover": "whatfor.jpg",
+        "yt_id": "ILvMOC4H9EM"
     },
     {
         "song": "It Is Not Meant to Be",
         "artist": "Tame Impala",
         "album": "Innerspeaker",
         "year": "2010",
-        "cover": "./media/innerspeaker.jpg",
-        "link": "https://youtu.be/5N-CdaTYtMQ"
+        "cover": "innerspeaker.jpg",
+        "yt_id": "5N-CdaTYtMQ"
     }
 ]

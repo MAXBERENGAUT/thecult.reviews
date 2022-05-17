@@ -1,0 +1,143 @@
+* {
+  font-family: 'Raleway', Verdana;
+  color: white;
+  word-spacing: 0.25em;
+  line-height: 1.5em;
+}
+
+body, html {
+  overflow-x: hidden;
+  background-color: black;
+}
+
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+footer {
+  position: fixed;
+  display: block;
+  text-align: center;
+  font-size: 0.85em;
+  letter-spacing: 0.03em;
+  word-spacing: 0.5em;
+  left: 50%;
+  bottom: 0;
+  margin: 0 auto;
+  transform: translate(-50%, 0);
+}
+
+#menu {
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  position: fixed;
+  height: 80%;
+  top: 12.5%;
+}
+
+.fade-in {
+  -webkit-animation: fade-in 2s forwards;
+  -moz-animation: fade-in 2s forwards;
+  -o-animation: fade-in 2s forwards;
+  -ms-animation: fade-in 2s forwards;
+  animation: fade-in 2s forwards;
+}
+
+.item {
+  position: relative;
+  background-color: black;
+  text-align: center;
+  font-size: 150%;
+  width: 300px;
+  border: 2px solid white;
+  margin: 0 30px;
+  white-space: normal;
+  overflow: hidden;
+  box-shadow: 10px 10px 10px #555555;
+}
+
+.tilt{
+  transition        : 1.0s ease all;
+-moz-transition   : 1.0s ease all;
+-webkit-transition: 1.0s ease all;
+}
+
+.tilt:hover{
+transform               : rotateX(10deg) rotateY(-10deg);
+-moz-transform          : rotateX(10deg) rotateY(-10deg);
+  -webkit-transform       : rotateX(10deg) rotateY(-10deg);
+transform-origin        : center;
+-moz-transform-origin   : center;
+-webkit-transform-origin: center;
+transition              : transform 1.0s ease all;
+-moz-transition         : -moz-transform 1.0s ease all;
+-webkit-transition      : -webkit-transform 1.0s ease all;
+}
+
+.highlight {
+  transition        : 1.0s ease all;
+-moz-transition   : 1.0s ease all;
+-webkit-transition: 1.0s ease all;
+}
+
+.highlight:hover {
+  box-shadow: 5px 5px 50px #555555;
+}
+
+.cover-f {
+  max-height: 100%;
+  max-width: 100%;
+  border-bottom: 2px solid white;
+}
+
+.cover {
+  max-height: calc(70% - 4px);
+  max-width: calc(70% - 4px);
+  margin: 15% 15%;
+  border: 2px solid white;
+}
+
+.artist {
+  
+}
+
+.song {
+
+}
+
+.album {
+  font-size: 90%;
+  font-style: italic;
+  color: lightgray;
+}
+
+.year {
+  font-size: 80%;
+  color: lightgray;
+}
+
+.yt-logo {
+  filter: invert();
+  max-width: 15%;
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+@-webkit-keyframes  fade-out { to { opacity: 0; }}
+@-moz-keyframes     fade-out { to { opacity: 0; }}
+@-o-keyframes       fade-out { to { opacity: 0; }}
+@-ms-keyframes      fade-out { to { opacity: 0; }}
+@keyframes          fade-out { to { opacity: 0; }}
+
+@-webkit-keyframes  fade-in { from { opacity: 0; } to { opacity: 1; }}
+@-moz-keyframes     fade-in { from { opacity: 0; } to { opacity: 1; }}
+@-o-keyframes       fade-in { from { opacity: 0; } to { opacity: 1; }}
+@-ms-keyframes      fade-in { from { opacity: 0; } to { opacity: 1; }}
+@keyframes          fade-in { from { opacity: 0; } to { opacity: 1; }}
