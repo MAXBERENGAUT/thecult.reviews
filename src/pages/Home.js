@@ -10,6 +10,8 @@ const ITEM_BORDER = 0
 const ITEM_LENGTH = ITEM_WIDTH + 2*(ITEM_MARGIN + ITEM_BORDER)
 
 const MENU_INIT_OFFSET = window.innerWidth / 3
+const MENU_FRICTION = 0.95
+const MENU_MIN_VELOCITY = 0.001
 
 const URL_BASE_IMAGEKIT = 'https://ik.imagekit.io/maxberengautsites/'
 const URL_BASE_LINK = 'https://youtu.be/'
@@ -19,8 +21,12 @@ const URL_BACKGROUND = 'https://static.videezy.com/system/resources/previews/000
 
 
 function Menu() {
-    // const [delta, setDelta] = useState(0)
-    const [pos, setPos] = useState({distance: 0, offset: MENU_INIT_OFFSET})
+    const [pos, setPos] = useState({
+        distance: 0, 
+        offset: MENU_INIT_OFFSET,
+        velocity: 0
+    })
+
     const [items, setItems] = useState(() => {
         // pad reviews to fill screen
         while (Reviews.length < ITEM_COUNT_MIN) {
@@ -55,11 +61,42 @@ function Menu() {
     const x1 = useRef(null)
     const isDown = useRef(false)
 
-    // if (delta > 0 && !isDown.current) {
-    //     let d = Math.min(menu.current.scrollLeft - delta / 2, -pos.distance)
-    //     setPos({ distance: pos.distance + d, offset: pos.offset + d})
-        // setDelta(Math.floor(delta / 2))
-    // }
+    if (pos.velocity !== 0 && !isDown.current) {
+        let v = (Math.abs(pos.velocity) > MENU_MIN_VELOCITY) ? pos.velocity : 0
+        let d = Math.min(menu.current.scrollLeft + v, -pos.distance)
+        console.log(v)
+
+        setTimeout(() => {
+            setPos({ 
+                distance: pos.distance + d, 
+                offset: pos.offset + d,
+                velocity: v * MENU_FRICTION
+            })
+            wrapItems()
+        }, 10)
+    }
+
+    function wrapItems() {
+        // if we have moved far enough left, wrap front item to back
+        if (-pos.offset > ITEM_LENGTH) {
+            setItems([...items.slice(1), items[0]])
+            setPos({ 
+                distance: pos.distance, 
+                offset: pos.offset + ITEM_LENGTH,
+                velocity: pos.velocity
+            })
+        }
+        
+        // if we have moved far enough right, wrap back item to front
+        if (pos.offset > 0 && -pos.distance > MENU_INIT_OFFSET) {
+            setItems([items.at(-1), ...items.slice(0, -1)])
+            setPos({ 
+                distance: pos.distance, 
+                offset: pos.offset - ITEM_LENGTH,
+                velocity: pos.velocity
+            })
+        }
+    }
 
     function onMouseMove(e) {
         if (!isDown.current) return;
@@ -69,19 +106,13 @@ function Menu() {
         let d = Math.min(menu.current.scrollLeft - (x1.current - x2), -pos.distance)
         x1.current = e.pageX - menu.current.offsetLeft
 
-        setPos({ distance: pos.distance + d, offset: pos.offset + d })
+        setPos({ 
+            distance: pos.distance + d, 
+            offset: pos.offset + d,
+            velocity: d
+        })
 
-        // if we have moved far enough left, wrap front item to back
-        if (-pos.offset > ITEM_LENGTH) {
-            setItems([...items.slice(1), items[0]])
-            setPos({ distance: pos.distance, offset: pos.offset + ITEM_LENGTH })
-        }
-        
-        // if we have moved far enough right, wrap back item to front
-        if (pos.offset > 0 && -pos.distance > MENU_INIT_OFFSET) {
-            setItems([items.at(-1), ...items.slice(0, -1)])
-            setPos({ distance: pos.distance, offset: pos.offset - ITEM_LENGTH })
-        }
+        wrapItems()
     }
 
     function onMouseDown(e) { 
@@ -95,7 +126,11 @@ function Menu() {
         isDown.current = false
         menu.current.style.cursor = "unset"
 
-        // setDelta(200)
+        // setPos({
+        //     distance: pos.distance,
+        //     offset: pos.offset,
+        //     velocity: 200
+        // })
     }
 
     function onMouseLeave() {
