@@ -5,18 +5,22 @@ import './Home.css';
 const ITEM_COUNT_MIN = 20
 const ITEM_WIDTH = 300
 const ITEM_MARGIN = 30
-const ITEM_BORDER = 2
+// const ITEM_BORDER = 2
+const ITEM_BORDER = 0
 const ITEM_LENGTH = ITEM_WIDTH + 2*(ITEM_MARGIN + ITEM_BORDER)
+
+const MENU_INIT_OFFSET = window.innerWidth / 3
 
 const URL_BASE_IMAGEKIT = 'https://ik.imagekit.io/maxberengautsites/'
 const URL_BASE_LINK = 'https://youtu.be/'
 const URL_BASE_COVER = URL_BASE_IMAGEKIT + 'covers/'
-const URL_BACKGROUND = URL_BASE_IMAGEKIT + 'thecult_reviews/timelapse.mp4'
 const URL_YT_LOGO = URL_BASE_IMAGEKIT + 'thecult_reviews/yt_logo.svg'
+const URL_BACKGROUND = 'https://static.videezy.com/system/resources/previews/000/039/223/original/51_25_08_19.mp4'
 
 
-function Menu() {    
-    const [pos, setPos] = useState({distance: 0, offset: 0})
+function Menu() {
+    // const [delta, setDelta] = useState(0)
+    const [pos, setPos] = useState({distance: 0, offset: MENU_INIT_OFFSET})
     const [items, setItems] = useState(() => {
         // pad reviews to fill screen
         while (Reviews.length < ITEM_COUNT_MIN) {
@@ -35,7 +39,7 @@ function Menu() {
                     <p className='artist'>{review.artist}</p>
                     <p className='album'>{review.album}</p>
                     <p className='year'>{review.year}</p>
-                    <a href={URL_BASE_LINK + review.link}>
+                    <a href={URL_BASE_LINK + review.yt_id}>
                         <img 
                             className='yt-logo'
                             src={URL_YT_LOGO}
@@ -50,6 +54,12 @@ function Menu() {
     const menu = useRef(null)
     const x1 = useRef(null)
     const isDown = useRef(false)
+
+    // if (delta > 0 && !isDown.current) {
+    //     let d = Math.min(menu.current.scrollLeft - delta / 2, -pos.distance)
+    //     setPos({ distance: pos.distance + d, offset: pos.offset + d})
+        // setDelta(Math.floor(delta / 2))
+    // }
 
     function onMouseMove(e) {
         if (!isDown.current) return;
@@ -68,7 +78,7 @@ function Menu() {
         }
         
         // if we have moved far enough right, wrap back item to front
-        if (pos.offset > 0) {
+        if (pos.offset > 0 && -pos.distance > MENU_INIT_OFFSET) {
             setItems([items.at(-1), ...items.slice(0, -1)])
             setPos({ distance: pos.distance, offset: pos.offset - ITEM_LENGTH })
         }
@@ -84,6 +94,8 @@ function Menu() {
     function onMouseUp() { 
         isDown.current = false
         menu.current.style.cursor = "unset"
+
+        // setDelta(200)
     }
 
     function onMouseLeave() {
@@ -115,7 +127,6 @@ function Home() {
                 autoPlay 
                 muted 
                 loop 
-                id='background' 
                 src={URL_BACKGROUND} 
                 type='video/mp4' 
             />
