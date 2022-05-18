@@ -1,50 +1,50 @@
 [
     {
-        "song": "Have a Cigar",
-        "artist": "Pink Floyd",
-        "album": "Dark Side of the Moon",
-        "year": "1973",
+        "song": "If We Wait",
+        "artist": "Guided By Voices",
+        "album": "Sunfish Holy Breakfast",
+        "year": "1996",
         "cover": "dsotm.jpeg",
-        "yt_id": "tbdpv7G_PPg"
+        "yt_id": "qu2RqqIRCuc"
     },
     {
-        "song": "Aphasia",
-        "artist": "Pinegrove",
-        "album": "Cardinal",
-        "year": "2016",
-        "cover": "cardinal.jfif",
-        "yt_id": "5N-CdaTYtMQ"
-    },
-    {
-        "song": "Give Up Baby Go",
-        "artist": "Peach Pit",
-        "album": "From 2 to 3",
+        "song": "Stay The Night (feat. Pasto Flocco)",
+        "artist": "1600J",
+        "album": "NextDoorNeighbors (feat. Pasto Flocco)",
         "year": "2022",
-        "cover": "f2t3.jfif",
-        "yt_id": "OPyrxs_fDCA"
+        "cover": "cardinal.jfif",
+        "yt_id": "Vk8xFiind5g"
     },
     {
-        "song": "The World is Crowded",
-        "artist": "Unknown Mortal Orchestra",
-        "album": "Multi-Love",
-        "year": "2015",
-        "cover": "multilove.jpg",
-        "yt_id": "iPrCVCoSqCA"
-    },
-    {
-        "song": "Lilly",
-        "artist": "Toro Y Moi",
-        "album": "What For?",
-        "year": "2015",
-        "cover": "whatfor.jpg",
-        "yt_id": "ILvMOC4H9EM"
-    },
-    {
-        "song": "It Is Not Meant to Be",
-        "artist": "Tame Impala",
-        "album": "Innerspeaker",
+        "song": "Your Rabbit Feet",
+        "artist": "Wild Nothing",
+        "album": "Golden Haze - EP",
         "year": "2010",
+        "cover": "f2t3.jfif",
+        "yt_id": "HovMckJN4Vs"
+    },
+    {
+        "song": "Broken Spanish (ft. Rx Papi)",
+        "artist": "RXKNephew",
+        "album": "New Breed Trapper",
+        "year": "2019",
+        "cover": "multilove.jpg",
+        "yt_id": "AA3fpZF3aX4"
+    },
+    {
+        "song": "In My Belly",
+        "artist": "Paear",
+        "album": "A Healthy Earth",
+        "year": "2019",
+        "cover": "whatfor.jpg",
+        "yt_id": "SieumkMSY3c"
+    },
+    {
+        "song": "Martell Blues",
+        "artist": "Na-Kel Smith",
+        "album": "HML.mX 3D",
+        "year": "2022",
         "cover": "innerspeaker.jpg",
-        "yt_id": "5N-CdaTYtMQ"
+        "yt_id": "Z6JPOSHxFkw"
     }
 ]
