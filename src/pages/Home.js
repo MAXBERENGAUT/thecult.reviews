@@ -5,13 +5,14 @@ import './Home.css';
 const ITEM_COUNT_MIN = 20
 const ITEM_WIDTH = 300
 const ITEM_MARGIN = 30
-// const ITEM_BORDER = 2
-const ITEM_BORDER = 0
+const ITEM_BORDER = 2
+// const ITEM_BORDER = 0
 const ITEM_LENGTH = ITEM_WIDTH + 2*(ITEM_MARGIN + ITEM_BORDER)
 
 const MENU_INIT_OFFSET = window.innerWidth / 3
 const MENU_FRICTION = 0.95
 const MENU_MIN_VELOCITY = 0.001
+const MENU_UPDATE_TIME = 10
 
 const URL_BASE_IMAGEKIT = 'https://ik.imagekit.io/maxberengautsites/'
 const URL_BASE_LINK = 'https://youtu.be/'
@@ -73,7 +74,7 @@ function Menu() {
                 velocity: v * MENU_FRICTION
             })
             wrapItems()
-        }, 10)
+        }, MENU_UPDATE_TIME)
     }
 
     function wrapItems() {
@@ -143,10 +144,15 @@ function Menu() {
             ref={menu}
             id='menu' 
             style={{transform: `translateX(${pos.offset}px)`}}
+
             onMouseDown={onMouseDown}
             onMouseUp={onMouseUp}
             onMouseMove={onMouseMove}
             onMouseLeave={onMouseLeave}
+
+            // onTouchStart={onMouseDown}
+            // onTouchMove={onMouseMove}
+            // onTouchCancel={onMouseUp}
         >
             {items}
         </div>

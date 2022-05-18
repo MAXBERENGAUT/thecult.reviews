@@ -55,14 +55,14 @@ footer {
   text-align: center;
   font-size: 150%;
   width: 300px;
-  /* border: 2px solid white; */
+  border: 2px solid white;
   margin: 0 30px;
   white-space: normal;
   overflow: hidden;
 
   background-color: rgba(0, 0, 0, 0.85);
   /* border-radius: 10px; */
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.85);
+  /* box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.85); */
 }
 
 .tilt{
@@ -93,7 +93,7 @@ footer {
   max-height: calc(70% - 4px);
   max-width: calc(70% - 4px);
   margin: 15% 15%;
-  /* border: 2px solid white; */
+  border: 2px solid white;
 }
 
 .artist {
