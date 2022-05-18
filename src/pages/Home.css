@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
 * {
   font-family: 'Raleway', Verdana;
   color: white;
@@ -36,8 +38,8 @@ footer {
   display: flex;
   flex-wrap: nowrap;
   position: fixed;
-  height: 80%;
-  top: 12.5%;
+  height: 85%;
+  top: 7.5%;
 }
 
 .fade-in {
@@ -58,35 +60,24 @@ footer {
   margin: 0 30px;
   white-space: normal;
   overflow: hidden;
-  box-shadow: 10px 10px 10px #555555;
 }
 
 .tilt{
   transition        : 1.0s ease all;
--moz-transition   : 1.0s ease all;
--webkit-transition: 1.0s ease all;
+  -moz-transition   : 1.0s ease all;
+  -webkit-transition: 1.0s ease all;
 }
 
 .tilt:hover{
-transform               : rotateX(10deg) rotateY(-10deg);
--moz-transform          : rotateX(10deg) rotateY(-10deg);
+  transform               : rotateX(10deg) rotateY(-10deg);
+  -moz-transform          : rotateX(10deg) rotateY(-10deg);
   -webkit-transform       : rotateX(10deg) rotateY(-10deg);
-transform-origin        : center;
--moz-transform-origin   : center;
--webkit-transform-origin: center;
-transition              : transform 1.0s ease all;
--moz-transition         : -moz-transform 1.0s ease all;
--webkit-transition      : -webkit-transform 1.0s ease all;
-}
-
-.highlight {
-  transition        : 1.0s ease all;
--moz-transition   : 1.0s ease all;
--webkit-transition: 1.0s ease all;
-}
-
-.highlight:hover {
-  box-shadow: 5px 5px 50px #555555;
+  transform-origin        : center;
+  -moz-transform-origin   : center;
+  -webkit-transform-origin: center;
+  transition              : transform 1.0s ease all;
+  -moz-transition         : -moz-transform 1.0s ease all;
+  -webkit-transition      : -webkit-transform 1.0s ease all;
 }
 
 .cover-f {
