@@ -1,5 +1,13 @@
 [
     {
+        "song": "Test Item",
+        "artist": "Josh",
+        "album": "Test Album: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ullamcorper, justo eget mattis venenatis, metus lacus semper libero, lobortis dapibus tellus mi ut augue. Aenean efficitur pulvinar risus. Nulla id cursus ante. Nam quis lacus non massa varius elementum. Mauris vitae imperdiet eros. Morbi ac odio quis velit egestas tristique.",
+        "year": "2022",
+        "cover": "GBV.jpeg",
+        "yt_id": "qu2RqqIRCuc"
+    },
+    {
         "song": "If We Wait",
         "artist": "Guided By Voices",
         "album": "Sunfish Holy Breakfast",

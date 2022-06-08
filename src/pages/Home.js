@@ -4,11 +4,13 @@ import './Home.css';
 
 const ITEM_COUNT_MIN = 20
 const ITEM_WIDTH = 300
+// const ITEM_MARGIN = 30
 const ITEM_MARGIN = 30
 const ITEM_BORDER = 2
 const ITEM_LENGTH = ITEM_WIDTH + 2*(ITEM_MARGIN + ITEM_BORDER)
 
 const MENU_INIT_OFFSET = window.innerWidth / 3
+// const MENU_INIT_OFFSET = 0
 const MENU_FRICTION = 0.95
 const MENU_MIN_VELOCITY = 0.001
 const MENU_MAX_VELOCITY = 1
@@ -52,12 +54,14 @@ function Review(review, index) {
             <img 
                 className='cover tilt' 
                 src={URL_BASE_COVER + review.cover} 
-                alt={review.album + ' cover'}
+                alt={review.album + ' cover'} 
             />
-            <p className='song'>{review.song}</p>
-            <p className='artist'>{review.artist}</p>
-            <p className='album'>{review.album}</p>
-            <p className='year'>{review.year}</p>
+            <div class='content'>
+                <p className='song'>{review.song}</p>
+                <p className='artist'>{review.artist}</p>
+                <p className='album'>{review.album}</p>
+                <p className='year'>{review.year}</p>
+            </div>
             <a href={URL_BASE_LINK + review.yt_id}>
                 <img 
                     className='yt-logo'
@@ -73,7 +77,7 @@ function Review(review, index) {
 function Menu() {
     const [pos, setPos] = useState({
         distance: 0, 
-        offset: MENU_INIT_OFFSET,
+        offset: 0,
         velocity: 0
     })
 
@@ -87,26 +91,27 @@ function Menu() {
     })
 
     const mouse = Mouse()
+
     const isMousePresent = useRef(false)
     const menu = useRef(null)
     
     // check mouse positon and update menu accordingly
-    let v = 0
+    let v = pos.velocity
     if (isMousePresent.current) {
-        const width = window.innerWidth
-
+        const deadZoneLeft = (0.5 - MENU_DEAD_WIDTH) * window.innerWidth
+        const deadZoneRight = (0.5 + MENU_DEAD_WIDTH) * window.innerWidth
+        
         let p = 0
-        if (mouse.x <= width / 2 - MENU_DEAD_WIDTH * width) {
-            p = (width/2 - MENU_DEAD_WIDTH * width - mouse.x) / (width / 2 - MENU_DEAD_WIDTH * width)
-        } else if (mouse.x >= width / 2 + MENU_DEAD_WIDTH * width) {
-            p = - (mouse.x - (width / 2 + MENU_DEAD_WIDTH * width)) / (width / 2 - MENU_DEAD_WIDTH * width)
-
+        if (mouse.x <= deadZoneLeft) {
+            p = (deadZoneLeft - mouse.x) / deadZoneLeft
+        } else if (mouse.x >= deadZoneRight) {
+            p = (deadZoneRight - mouse.x) / deadZoneLeft
         }
 
-        v = pos.velocity + (MENU_MAX_VELOCITY * p - pos.velocity) * (1 - MENU_FRICTION)
+        v += (MENU_MAX_VELOCITY * p - pos.velocity) * (1 - MENU_FRICTION)
 
     } else {
-        v = pos.velocity * MENU_FRICTION
+        v *= MENU_FRICTION
     }
     
     // update position if velocity is non-zero
@@ -116,16 +121,17 @@ function Menu() {
         setTimeout(() => {
             setPos({ 
                 distance: pos.distance + d, 
-                offset: pos.offset + d,
-                velocity: v
+                offset: pos.offset + d, 
+                velocity: v 
             })
+            console.log(pos.distance + d)
             wrapItems()
         }, MENU_UPDATE_TIME)
     }
 
     function wrapItems() {
         // if we have moved far enough left, wrap front item to back
-        if (-pos.offset > ITEM_LENGTH) {
+        if (-pos.offset > ITEM_LENGTH + MENU_INIT_OFFSET) {
             setItems([...items.slice(1), items[0]])
             setPos({ 
                 distance: pos.distance, 
@@ -135,7 +141,7 @@ function Menu() {
         }
         
         // if we have moved far enough right, wrap back item to front
-        if (pos.offset > 0 && -pos.distance > MENU_INIT_OFFSET) {
+        if (pos.offset > -MENU_INIT_OFFSET && -pos.distance > MENU_INIT_OFFSET) {
             setItems([items.at(-1), ...items.slice(0, -1)])
             setPos({ 
                 distance: pos.distance, 
@@ -158,16 +164,8 @@ function Menu() {
             ref={menu}
             id='menu' 
             style={{transform: `translateX(${pos.offset}px)`}}
-
-            // onMouseDown={onMouseDown}
-            // onMouseUp={onMouseUp}
-            // onMouseMove={onMouseMove}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
-
-            // onTouchStart={onMouseDown}
-            // onTouchMove={onMouseMove}
-            // onTouchCancel={onMouseUp}
         >
             {items}
         </div>

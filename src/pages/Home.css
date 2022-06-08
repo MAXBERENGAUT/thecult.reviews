@@ -38,8 +38,14 @@ footer {
   display: flex;
   flex-wrap: nowrap;
   position: fixed;
-  height: 85%;
-  top: 7.5%;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-top: 7.5vh solid black;
+  border-bottom: 7.5vh solid black;
+  border-left: 33.3vh solid black;
+  z-index: 1;
 }
 
 .fade-in {
@@ -54,15 +60,49 @@ footer {
   position: relative;
   text-align: center;
   font-size: 150%;
+  height: 100%;
   width: 300px;
-  border: 2px solid white;
-  margin: 0 30px;
+  border-right: 60px solid black;
   white-space: normal;
   overflow: hidden;
+}
 
+.item:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border: 2px solid white;
   background-color: rgba(0, 0, 0, 0.85);
-  /* border-radius: 10px; */
-  /* box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.85); */
+  z-index: -1;
+}
+
+.content {
+  margin: 0 13%;
+  overflow: auto;
+  /* full height - cover - yt logo */
+  height: calc(100% - 300px - 75px);
+  mask-image: linear-gradient(to bottom, white 80%, transparent 100%);
+}
+
+.content::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.cover-f {
+  max-height: 100%;
+  max-width: 100%;
+  /* border-bottom: 2px solid white; */
+}
+
+.cover {
+  max-height: calc(70% - 4px);
+  max-width: calc(70% - 4px);
+  margin: 15% 15%;
+  border: 2px solid white;
 }
 
 .tilt{
@@ -83,25 +123,12 @@ footer {
   -webkit-transition      : -webkit-transform 1.0s ease all;
 }
 
-.cover-f {
-  max-height: 100%;
-  max-width: 100%;
-  /* border-bottom: 2px solid white; */
-}
-
-.cover {
-  max-height: calc(70% - 4px);
-  max-width: calc(70% - 4px);
-  margin: 15% 15%;
-  border: 2px solid white;
-}
-
 .artist {
   
 }
 
 .song {
-
+  
 }
 
 .album {
@@ -117,11 +144,13 @@ footer {
 
 .yt-logo {
   filter: invert();
-  max-width: 15%;
-  position: absolute;
-  bottom: 2%;
-  left: 50%;
-  transform: translate(-50%);
+  height: 45px;
+  margin-top: 10px;
+  /* max-width: 15%; */
+  /* position: absolute; */
+  /* bottom: 2%; */
+  /* left: 50%; */
+  /* transform: translate(-50%); */
 }
 
 @-webkit-keyframes  fade-out { to { opacity: 0; }}
