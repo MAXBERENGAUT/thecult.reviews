@@ -46,5 +46,38 @@
         "year": "2022",
         "cover": "HMLMX3D.jpeg",
         "yt_id": "Z6JPOSHxFkw"
+    },
+    {
+        "song": "No Good Al Joad",
+        "artist": "Hop Along",
+        "album": "Get Disowned",
+        "year": "2012",
+        "cover": "nogoodal.jpeg",
+        "yt_id": "jO_N-xNaU6A"
+    },
+    {
+        "song": "Down Softly",
+        "artist": "Five Pebbles",
+        "album": "Forget Me Not - EP,
+        "year": "2021",
+        "cover": "downsoftly.jpeg",
+        "yt_id": "omGzPQZXdDs"
+    },
+    {
+        "song": "Pancake",
+        "artist": "Swirlies",
+        "album": "Blonder Toungue Audio Baton",
+        "year": "1992",
+        "cover": "pancake.jpeg",
+        "yt_id": "c1M3DIX9f78"
+    },
+    {
+        "song": "Do U love me ?",
+        "artist": "Bear1Boss",
+        "album": "It's Easy",
+        "year": "2021",
+        "cover": "feelit.jpeg",
+        "yt_id": "IXVyyltVcEY"
     }
+    
 ]
