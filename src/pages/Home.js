@@ -4,48 +4,24 @@ import './Home.css';
 
 const ITEM_COUNT_MIN = 20
 const ITEM_WIDTH = 300
-// const ITEM_MARGIN = 30
 const ITEM_MARGIN = 30
-const ITEM_BORDER = 2
+// const ITEM_BORDER = 2
+const ITEM_BORDER = 0
 const ITEM_LENGTH = ITEM_WIDTH + 2*(ITEM_MARGIN + ITEM_BORDER)
 
-const MENU_INIT_OFFSET = window.innerWidth / 3
-// const MENU_INIT_OFFSET = 0
-const MENU_FRICTION = 0.95
+const MENU_INIT_OFFSET = 0
+const MENU_RESISTANCE = 0.05
+const MENU_SLOWDOWN = 0.97
 const MENU_MIN_VELOCITY = 0.001
 const MENU_MAX_VELOCITY = 1
 const MENU_DEAD_WIDTH = 0.2
-const MENU_UPDATE_TIME = 10
+const MENU_UPDATE_TIME = 5
 
 const URL_BASE_IMAGEKIT = 'https://ik.imagekit.io/maxberengautsites/'
 const URL_BASE_LINK = 'https://youtu.be/'
 const URL_BASE_COVER = URL_BASE_IMAGEKIT + 'covers/'
 const URL_YT_LOGO = URL_BASE_IMAGEKIT + 'thecult_reviews/yt_logo.svg'
 const URL_BACKGROUND = 'https://static.videezy.com/system/resources/previews/000/039/223/original/51_25_08_19.mp4'
-
-
-function Mouse() {
-    const [mouse, setMouse] = useState({x: 0, y: 0, isPresent: false})
-  
-    useEffect(() => {
-        function onMouseMove(e) {
-            setMouse({x: e.screenX, y: e.screenY, isPresent: true})
-        }
-
-        function onMouseLeave(e) {
-            setMouse({x: e.screenX, y: e.screenY, isPresent: false})
-        }
-
-        window.addEventListener('mousemove', onMouseMove);
-        window.addEventListener('mouseleave', onMouseLeave);
-        return () => {
-            window.removeEventListener('mousemove', onMouseMove)
-            window.removeEventListener('mouseleave', onMouseLeave)
-        }
-    }, [])
-  
-    return mouse
-}
 
 
 function Review(review, index) {
@@ -56,7 +32,7 @@ function Review(review, index) {
                 src={URL_BASE_COVER + review.cover} 
                 alt={review.album + ' cover'} 
             />
-            <div class='content'>
+            <div className='content'>
                 <p className='song'>{review.song}</p>
                 <p className='artist'>{review.artist}</p>
                 <p className='album'>{review.album}</p>
@@ -75,95 +51,99 @@ function Review(review, index) {
 
 
 function Menu() {
-    const [pos, setPos] = useState({
-        distance: 0, 
-        offset: 0,
-        velocity: 0
-    })
+    const [offset, setOffset] = useState(0)
+    const [velocity, setVelocity] = useState(0)
 
     const [items, setItems] = useState(() => {
         // pad reviews to fill screen
         while (Reviews.length < ITEM_COUNT_MIN) {
             Reviews = Reviews.concat(Reviews)
         }
-
+        
         return Reviews.map(Review)
     })
-
-    const mouse = Mouse()
-
-    const isMousePresent = useRef(false)
+    
     const menu = useRef(null)
-    
-    // check mouse positon and update menu accordingly
-    let v = pos.velocity
-    if (isMousePresent.current) {
-        const deadZoneLeft = (0.5 - MENU_DEAD_WIDTH) * window.innerWidth
-        const deadZoneRight = (0.5 + MENU_DEAD_WIDTH) * window.innerWidth
-        
-        let p = 0
-        if (mouse.x <= deadZoneLeft) {
-            p = (deadZoneLeft - mouse.x) / deadZoneLeft
-        } else if (mouse.x >= deadZoneRight) {
-            p = (deadZoneRight - mouse.x) / deadZoneLeft
-        }
+    const mouse = useRef({ x: 0, y: 0, isPresent: false})
+    const time = useRef(Date.now())
 
-        v += (MENU_MAX_VELOCITY * p - pos.velocity) * (1 - MENU_FRICTION)
+    useEffect(() => {
+        const interval = setInterval(() => {
+            // CALCULATE VELOCITY 
+            let v_new = 0         
+            if (mouse.current.isPresent) {
+                const deadZoneLeft = (0.5 - MENU_DEAD_WIDTH) * window.innerWidth
+                const deadZoneRight = (0.5 + MENU_DEAD_WIDTH) * window.innerWidth
 
-    } else {
-        v *= MENU_FRICTION
-    }
-    
-    // update position if velocity is non-zero
-    if (Math.abs(v) > MENU_MIN_VELOCITY) {
-        const d = Math.min(menu.current.scrollLeft + v * MENU_UPDATE_TIME, -pos.distance)
+                let p = 0
+                if (mouse.current.x <= deadZoneLeft) {
+                    p = (deadZoneLeft - mouse.current.x) / deadZoneLeft
+                } else if (mouse.current.x >= deadZoneRight) {
+                    p = (deadZoneRight - mouse.current.x) / deadZoneLeft
+                }
 
-        setTimeout(() => {
-            setPos({ 
-                distance: pos.distance + d, 
-                offset: pos.offset + d, 
-                velocity: v 
-            })
-            console.log(pos.distance + d)
-            wrapItems()
+                const v_target = (MENU_MAX_VELOCITY * p)
+                v_new = velocity + (v_target - velocity) * MENU_RESISTANCE
+
+            } else {
+                v_new = velocity * MENU_SLOWDOWN
+            }
+
+            // skip updating position if no velocity
+            const delta = Date.now() - time.current
+            time.current = Date.now()
+
+            if (Math.abs(v_new) < MENU_MIN_VELOCITY) return
+
+            
+            // update position if velocity is non-zero
+            console.log(delta)
+            let o_new = offset + delta * velocity
+            
+            // FIXME: lag causing loops of alternating item wraps
+            // WRAP ITEMS
+            // if we have moved far enough left, wrap front item to back
+            if (v_new < 0 && -o_new > ITEM_LENGTH + MENU_INIT_OFFSET) {
+                setItems((items) => [...items.slice(1), items[0]])
+                o_new += ITEM_LENGTH
+            }
+            
+            // if we have moved far enough right, wrap back item to front
+            if (v_new > 0 && o_new > -MENU_INIT_OFFSET - ITEM_MARGIN) {
+                setItems((items) => [items.at(-1), ...items.slice(0, -1)])
+                o_new -= ITEM_LENGTH
+            }
+
+            setVelocity(v_new)
+            setOffset(o_new)
+
         }, MENU_UPDATE_TIME)
-    }
-
-    function wrapItems() {
-        // if we have moved far enough left, wrap front item to back
-        if (-pos.offset > ITEM_LENGTH + MENU_INIT_OFFSET) {
-            setItems([...items.slice(1), items[0]])
-            setPos({ 
-                distance: pos.distance, 
-                offset: pos.offset + ITEM_LENGTH,
-                velocity: pos.velocity
-            })
-        }
         
-        // if we have moved far enough right, wrap back item to front
-        if (pos.offset > -MENU_INIT_OFFSET && -pos.distance > MENU_INIT_OFFSET) {
-            setItems([items.at(-1), ...items.slice(0, -1)])
-            setPos({ 
-                distance: pos.distance, 
-                offset: pos.offset - ITEM_LENGTH,
-                velocity: pos.velocity
-            })
+        return () => { 
+            // console.log('interval cleared')
+            clearInterval(interval)
         }
+    }, [velocity, offset])
+
+    function onMouseMove(e) {
+        mouse.current.x = e.screenX
+        mouse.current.y = e.screenY
     }
 
     function onMouseEnter() {
-        isMousePresent.current = true
+        mouse.current.isPresent = true
     }
 
     function onMouseLeave() {
-        isMousePresent.current = false
+        mouse.current.isPresent = false
     }
 
     return (
         <div 
             ref={menu}
             id='menu' 
-            style={{transform: `translateX(${pos.offset}px)`}}
+            style={{transform: `translateX(${offset}px)`}}
+            onMouseMove={onMouseMove}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
         >

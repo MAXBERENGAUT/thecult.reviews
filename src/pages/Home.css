@@ -44,7 +44,7 @@ footer {
   height: 100%;
   border-top: 7.5vh solid black;
   border-bottom: 7.5vh solid black;
-  border-left: 33.3vh solid black;
+  /* border-left: 33.3vh solid black; */
   z-index: 1;
 }
 
@@ -62,7 +62,7 @@ footer {
   font-size: 150%;
   height: 100%;
   width: 300px;
-  border-right: 60px solid black;
+  border-left: 60px solid black;
   white-space: normal;
   overflow: hidden;
 }
