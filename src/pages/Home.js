@@ -8,6 +8,7 @@ const ITEM_MARGIN = 30
 // const ITEM_BORDER = 2
 const ITEM_BORDER = 0
 const ITEM_LENGTH = ITEM_WIDTH + 2*(ITEM_MARGIN + ITEM_BORDER)
+console.log(ITEM_LENGTH)
 
 const MENU_INIT_OFFSET = 0
 const MENU_RESISTANCE = 0.05
@@ -23,10 +24,27 @@ const URL_BASE_COVER = URL_BASE_IMAGEKIT + 'covers/'
 const URL_YT_LOGO = URL_BASE_IMAGEKIT + 'thecult_reviews/yt_logo.svg'
 const URL_BACKGROUND = 'https://static.videezy.com/system/resources/previews/000/039/223/original/51_25_08_19.mp4'
 
+const COLORS = [
+    '99635C',
+    'E68B7E',
+    '73DCE6',
+    '997B3D',
+    'E6BC67',
+    'F2BB88',
+    'FC8DEB',
+    '8CA4E6',
+    '8DFCB7',
+    'F5EE9D',
+]
 
 function Review(review, index) {
     return (
-        <div className='item' key={index}>
+        <div 
+            className='item' 
+            key={index} 
+            // style={{boxShadow: `inset 0 0 4px 4px #${COLORS[index % COLORS.length]}`}}
+            style={{boxShadow: `inset 0 0 0 4px #fff, inset 0 0 0 8px #${COLORS[index % COLORS.length]}`}}
+        >
             <img 
                 className='cover tilt' 
                 src={URL_BASE_COVER + review.cover} 
@@ -97,7 +115,7 @@ function Menu() {
 
             
             // update position if velocity is non-zero
-            console.log(delta)
+            // console.log(delta)
             let o_new = offset + delta * velocity
             
             // FIXME: lag causing loops of alternating item wraps
