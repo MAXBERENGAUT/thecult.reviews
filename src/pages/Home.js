@@ -43,7 +43,7 @@ function Review(review, index) {
             className='item' 
             key={index} 
             // style={{boxShadow: `inset 0 0 4px 4px #${COLORS[index % COLORS.length]}`}}
-            style={{boxShadow: `inset 0 0 0 4px #fff, inset 0 0 0 8px #${COLORS[index % COLORS.length]}`}}
+            style={{boxShadow: `inset 0 0 0 4px #fff, inset 0 0 0 6px #${COLORS[index % COLORS.length]}`}}
         >
             <img 
                 className='cover tilt' 
