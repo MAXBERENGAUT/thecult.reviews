@@ -16,14 +16,6 @@
         "yt_id": "Vk8xFiind5g"
     },
     {
-        "song": "Your Rabbit Feet",
-        "artist": "Wild Nothing",
-        "album": "Golden Haze - EP",
-        "year": "2010",
-        "cover": "goldenhaze.jpeg",
-        "yt_id": "HovMckJN4Vs"
-    },
-    {
         "song": "Broken Spanish (ft. Rx Papi)",
         "artist": "RXKNephew",
         "album": "New Breed Trapper",
@@ -38,6 +30,14 @@
         "year": "2019",
         "cover": "Peaer.jpeg",
         "yt_id": "SieumkMSY3c"
+    },
+    {
+        "song": "Your Rabbit Feet",
+        "artist": "Wild Nothing",
+        "album": "Golden Haze - EP",
+        "year": "2010",
+        "cover": "goldenhaze.jpeg",
+        "yt_id": "HovMckJN4Vs"
     },
     {
         "song": "Martell Blues",

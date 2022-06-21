@@ -65,14 +65,14 @@ footer {
   border-left: 60px solid black;
   white-space: normal;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .content {
   margin: 0 13%;
   overflow: auto;
-  /* full height - cover - yt logo */
-  height: calc(100% - 300px - 75px);
+  /* full height - cover - yt logo - space for yt logo*/
+  height: calc(100% - 300px - 75px - 10px);
   mask-image: linear-gradient(to bottom, white 80%, transparent 100%);
 }
 
@@ -134,7 +134,8 @@ footer {
 .yt-logo {
   filter: invert();
   height: 45px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  /* margin-bottom: 10px; */
   /* max-width: 15%; */
   /* position: absolute; */
   /* bottom: 2%; */
