@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Reviews from './reviews.json'
-import './Songs.css';
+// import './Songs.css';
 
 const ITEM_COUNT_MIN = 20
 const ITEM_WIDTH = 300
@@ -43,7 +43,13 @@ function Review(review, index) {
             className='item' 
             key={index} 
             // style={{boxShadow: `inset 0 0 4px 4px #${COLORS[index % COLORS.length]}`}}
-            style={{boxShadow: `inset 0 0 0 4px #fff, inset 0 0 0 6px #${COLORS[index % COLORS.length]}`}}
+            style={{
+                boxShadow: `inset 0 0 0 4px #fff, inset 0 0 0 6px #${COLORS[index % COLORS.length]}`,
+                fontFamily: "'Raleway', Verdana",
+                color: "white",
+                wordSpacing: "0.25em",
+                lineHeight: "1.5em"
+            }}
         >
             <img 
                 className='cover tilt' 
@@ -159,7 +165,7 @@ function Menu() {
     return (
         <div 
             ref={menu}
-            id='menu' 
+            id='menu-songs' 
             style={{transform: `translateX(${offset}px)`}}
             onMouseMove={onMouseMove}
             onMouseEnter={onMouseEnter}
@@ -174,7 +180,10 @@ function Menu() {
 
 function Songs() {
     return (
-        <div className="container">
+        <div 
+            className="container"
+            style={{overflowX: 'hidden', backgroundColor: 'black'}}
+        >
             <video 
                 autoPlay 
                 muted 

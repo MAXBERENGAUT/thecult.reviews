@@ -1,4 +1,4 @@
-import './Home.css';
+// import './Home.css';
 
 const CATEGORIES = [
     'Music',
@@ -9,16 +9,25 @@ const CATEGORIES = [
     'Television'
 ]
 
-function Home() {
-    let rows = CATEGORIES.map((category, index) => (
+function Category(name, index) {
+    return (
         <h2 key={index}>
-            {category}
+            <a 
+                href={(name === 'Songs of the Month') ? './songs' : './explorer'}
+                className={"category" + ((name === 'Songs of the Month') ? ' ul_gray' : '')}
+            >
+                {name}
+            </a>
         </h2>
-    ))
+    )
+}
+
+function Home() {
+    let items = CATEGORIES.map(Category)
 
     return (
-        <div>
-            {rows}
+        <div id='menu-home'>
+            {items}
         </div>
     )
 }
