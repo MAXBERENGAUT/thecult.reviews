@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
-import Reviews from './reviews.json'
-// import './Songs.css';
+import Reviews from '../json/reviews.json'
+import './Songs.css';
 
 const ITEM_COUNT_MIN = 20
 const ITEM_WIDTH = 300

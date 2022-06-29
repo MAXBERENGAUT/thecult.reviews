@@ -1,0 +1,77 @@
+/* REVIEWS PAGE */
+
+#review-wrap {
+    font-family: Georgia;
+}
+
+#review-head {
+    display: flex;
+    justify-content: space-around;
+}
+
+#review-head > div {
+    flex: 1 1 0;
+}
+
+#review-info {
+    /* position: relative; */
+
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+
+    line-height: 200%;
+    padding-top: 5vw;
+
+    font-size: 200%;
+    color: black;
+    word-spacing: 0.25em;
+}
+
+#review-score {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+
+    background-color: white;
+    border: black solid 2px;
+    font-family: Garamond;
+    font-size: 6vw;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+}
+
+#review-poster {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    line-height: 150%;
+    word-spacing: 200%;
+
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    margin: 2.5vw;
+
+    background-color: white;
+    border: black solid 2px;
+    font-size: 2vw;
+
+    width: 22.5vw;
+    height: 22.5vw;
+}
+
+#review-body {
+    margin: 5vw 10vw;
+    font-size: 200%;
+    line-height: 150%;
+}

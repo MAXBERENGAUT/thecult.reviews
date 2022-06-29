@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './Explorer.css';
 
 const REVIEWS = [
     {title: 'this is a test show title', score: 1.2},
@@ -36,6 +37,7 @@ function Review(review, index) {
             </div>
             <div 
                 className={'score' + fade}
+                onClick={() => {window.location.href = '../review'}}
             >
                 {review.score}
             </div>
