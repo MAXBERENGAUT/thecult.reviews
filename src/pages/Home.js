@@ -27,6 +27,7 @@ function Home() {
 
     return (
         <div id='menu-home'>
+            <h1 id='title'>The Cult</h1>
             {items}
         </div>
     )
