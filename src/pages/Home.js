@@ -1,4 +1,6 @@
+import netlifyIdentity from 'netlify-identity-widget'
 import './Home.css';
+
 
 const CATEGORIES = [
     'Music',
@@ -25,10 +27,18 @@ function Category(name, index) {
 function Home() {
     let items = CATEGORIES.map(Category)
 
+    function handleLogIn () {
+        netlifyIdentity.open()
+    }
+
     return (
         <div id='menu-home'>
             <h1 id='title'>The Cult</h1>
             {items}
+
+            {/* TEST CODE */}
+            <button onClick={handleLogIn} >Log in with netlify</button>
+            {/* TEST CODE */}
         </div>
     )
 }
