@@ -37,6 +37,8 @@ const COLORS = [
     'F5EE9D',
 ]
 
+
+// LOAD SONGS, TODO: move this to only load when on this page
 var context = require.context('../../content/songs', true, /.json$/);
 var songs = []
 context.keys().forEach(key => {
@@ -44,7 +46,7 @@ context.keys().forEach(key => {
     const resource = require(`../../content/songs/${fileName}`)
     songs.push(resource)
 })
-console.log(songs)
+
 
 function Review(review, index) {
     return (
