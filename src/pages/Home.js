@@ -1,6 +1,5 @@
 import './Home.css';
 
-
 const CATEGORIES = [
     'Music',
     'Movies',
@@ -25,10 +24,6 @@ function Category(name, index) {
 
 function Home() {
     let items = CATEGORIES.map(Category)
-
-    function handleLogIn () {
-        netlifyIdentity.open()
-    }
 
     return (
         <div id='menu-home'>
