@@ -1,8 +1,10 @@
 {
-    "song": "Expiremental",
-    "artist": "Duwap Kaine",
-    "album": "Faith Like Esther",
-    "year": "2022",
-    "cover": "duwap.jpeg",
-    "yt_id": "soF9Hg1C7MU"
+  "song": "Expiremental",
+  "artist": "Duwap Kaine",
+  "album": "Faith Like Esther",
+  "year": "2022",
+  "cover": "https://images.genius.com/3ee33204f3d64a321a1ab0cef7ee941a.1000x1000x1.png",
+  "yt_id": "soF9Hg1C7MU",
+  "title": "Experimental",
+  "yt_link": "https://youtu.be/6dNK043bLBM"
 }
