@@ -19,8 +19,8 @@ const MENU_DEAD_WIDTH = 0.2
 const MENU_UPDATE_TIME = 5
 
 const URL_BASE_IMAGEKIT = 'https://ik.imagekit.io/maxberengautsites/'
-const URL_BASE_LINK = 'https://youtu.be/'
-const URL_BASE_COVER = URL_BASE_IMAGEKIT + 'covers/'
+// const URL_BASE_LINK = 'https://youtu.be/'
+// const URL_BASE_COVER = URL_BASE_IMAGEKIT + 'covers/'
 const URL_YT_LOGO = URL_BASE_IMAGEKIT + 'thecult_reviews/yt_logo.svg'
 const URL_BACKGROUND = 'https://static.videezy.com/system/resources/previews/000/039/223/original/51_25_08_19.mp4'
 
@@ -62,7 +62,7 @@ function Review(review, index) {
         >
             <img 
                 className='cover tilt' 
-                src={URL_BASE_COVER + review.cover} 
+                src={review.cover} 
                 alt={review.album + ' cover'} 
             />
             <div className='content'>
@@ -71,7 +71,7 @@ function Review(review, index) {
                 <p className='album'>{review.album}</p>
                 <p className='year'>{review.year}</p>
             </div>
-            <a href={URL_BASE_LINK + review.yt_id}>
+            <a href={review.yt_link}>
                 <img 
                     className='yt-logo'
                     src={URL_YT_LOGO}

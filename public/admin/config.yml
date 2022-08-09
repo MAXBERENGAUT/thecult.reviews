@@ -28,4 +28,4 @@ collections:
       - {label: "Album", name: "album", widget: "string"}
       - {label: "Year", name: "year", widget: "string"}
       - {label: "Cover", name: "cover", widget: "image"}
-      - {label: "YouTube ID", name: "yt_id", widget: "string"}
+      - {label: "YouTube Link", name: "yt_link", widget: "string"}
