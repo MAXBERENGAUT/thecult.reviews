@@ -12,13 +12,13 @@ const BREADCRUMBS = {
     'tv': 'Television'
 }
 
-const REVIEWS = [
-    {title: 'this is a test show title', score: 1.2},
-    {title: 'smaller title', score: 3.4},
-    {title: 'title', score: 5.6},
-    {title: 'another title here', score: 7.8},
-    {title: 'one final title', score: 9.0},
-]
+// const REVIEWS = [
+//     {title: 'this is a test show title', score: 1.2},
+//     {title: 'smaller title', score: 3.4},
+//     {title: 'title', score: 5.6},
+//     {title: 'another title here', score: 7.8},
+//     {title: 'one final title', score: 9.0},
+// ]
 
 function Review(review, index) {
     let [fade, setFade] = useState('')
