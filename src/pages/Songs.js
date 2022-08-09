@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import Reviews from '../json/reviews.json'
+// import Reviews from '../json/reviews.json'
 import './Songs.css';
 
 const ITEM_COUNT_MIN = 20
@@ -36,6 +36,15 @@ const COLORS = [
     '8DFCB7',
     'F5EE9D',
 ]
+
+var context = require.context('../../content/songs', true, /.json$/);
+var songs = []
+context.keys().forEach(key => {
+    const fileName = key.replace('./', '')
+    const resource = require(`../../content/songs/${fileName}`)
+    songs.push(resource)
+})
+console.log(songs)
 
 function Review(review, index) {
     return (
@@ -79,12 +88,12 @@ function Menu() {
     const [velocity, setVelocity] = useState(0)
 
     const [items, setItems] = useState(() => {
-        // pad reviews to fill screen
-        while (Reviews.length < ITEM_COUNT_MIN) {
-            Reviews = Reviews.concat(Reviews)
+        // pad songs to fill screen
+        while (songs.length < ITEM_COUNT_MIN) {
+            songs = songs.concat(songs)
         }
         
-        return Reviews.map(Review)
+        return songs.map(Review)
     })
     
     const menu = useRef(null)
