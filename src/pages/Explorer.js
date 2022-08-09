@@ -1,5 +1,16 @@
 import React, { useState } from 'react'
+import { useLocation } from 'react-router-dom'
+import { loadContent } from '../content.js'
 import './Explorer.css';
+
+const BREADCRUMBS = {
+    'music': 'Music',
+    'movies': 'Movies',
+    'art': 'Art (Museums)',
+    'songs': 'Songs of the Month',
+    'literature': 'Literature',
+    'tv': 'Television'
+}
 
 const REVIEWS = [
     {title: 'this is a test show title', score: 1.2},
@@ -47,11 +58,13 @@ function Review(review, index) {
 } 
 
 function Explorer() {
-    let items = REVIEWS.map(Review)
+    let pathname = useLocation().pathname.replaceAll('/', '')
+    let reviews = loadContent(pathname);
+    let items = reviews.map(Review)
 
     return (
         <div>
-            <div id='breadcrumb'>Television</div>
+            <div id='breadcrumb'>{BREADCRUMBS[pathname]}</div>
             <div id='review-list'>
                 {items}
             </div>

@@ -1,20 +1,20 @@
 import './Home.css';
 
 const CATEGORIES = [
-    'Music',
-    'Movies',
-    'Art (Museums)',
-    'Songs of the Month',
-    'Literature',
-    'Television'
+    { name: 'Music', slug: 'music' },
+    { name: 'Movies', slug: 'movies' },
+    { name: 'Art (Museums)', slug: 'art' },
+    { name: 'Songs of the Month', slug: 'songs' },
+    { name: 'Literature', slug: 'literature' },
+    { name: 'television', slug: 'tv' },
 ]
 
-function Category(name, index) {
+function Category({name, slug}, index) {
     return (
         <h2 key={index}>
             <a 
-                href={(name === 'Songs of the Month') ? './songs' : './explorer'}
-                className={"category" + ((name === 'Songs of the Month') ? ' ul_gray' : '')}
+                href={`./${slug}`}
+                className={"category" + ((slug === 'songs') ? ' ul_gray' : '')}
             >
                 {name}
             </a>

@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
+import { loadContent } from '../content.js'
 // import Reviews from '../json/reviews.json'
 import './Songs.css';
 
@@ -36,17 +37,6 @@ const COLORS = [
     '8DFCB7',
     'F5EE9D',
 ]
-
-
-// LOAD SONGS, TODO: move this to only load when on this page
-var context = require.context('../../content/songs', true, /.json$/);
-var songs = []
-context.keys().forEach(key => {
-    const fileName = key.replace('./', '')
-    const resource = require(`../../content/songs/${fileName}`)
-    songs.push(resource)
-})
-
 
 function Song(entry, index) {
     return (
@@ -90,6 +80,8 @@ function Menu() {
     const [velocity, setVelocity] = useState(0)
 
     const [items, setItems] = useState(() => {
+        let songs = loadContent('songs');
+
         // pad songs to fill screen
         while (songs.length < ITEM_COUNT_MIN) {
             songs = songs.concat(songs)
