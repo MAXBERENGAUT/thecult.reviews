@@ -48,7 +48,7 @@ context.keys().forEach(key => {
 })
 
 
-function Review(review, index) {
+function Song(entry, index) {
     return (
         <div 
             className='item' 
@@ -64,16 +64,16 @@ function Review(review, index) {
         >
             <img 
                 className='cover tilt' 
-                src={review.cover} 
-                alt={review.album + ' cover'} 
+                src={entry.cover} 
+                alt={entry.album + ' cover'} 
             />
             <div className='content'>
-                <p className='song'>{review.song}</p>
-                <p className='artist'>{review.artist}</p>
-                <p className='album'>{review.album}</p>
-                <p className='year'>{review.year}</p>
+                <p className='song'>{entry.title}</p>
+                <p className='artist'>{entry.artist}</p>
+                <p className='album'>{entry.album}</p>
+                <p className='year'>{entry.year}</p>
             </div>
-            <a href={review.yt_link}>
+            <a href={entry.yt_link}>
                 <img 
                     className='yt-logo'
                     src={URL_YT_LOGO}
@@ -95,7 +95,7 @@ function Menu() {
             songs = songs.concat(songs)
         }
         
-        return songs.map(Review)
+        return songs.map(Song)
     })
     
     const menu = useRef(null)

@@ -21,7 +21,7 @@ collections:
     label: "Songs" # Used in the UI
     folder: "content/songs" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{fields.artist}}-{{title}}-{{fields.album}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Artist", name: "artist", widget: "string"}
@@ -29,3 +29,19 @@ collections:
       - {label: "Year", name: "year", widget: "string"}
       - {label: "Cover", name: "cover", widget: "image"}
       - {label: "YouTube Link", name: "yt_link", widget: "string"}
+
+  - name: "Music"
+    extension: json
+    format: json
+    label: "Music"
+    folder: "content/music"
+    create: true
+    slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Artist", name: "artist", widget: "string"}
+      - {label: "Year", name: "year", widget: "string"}
+      - {label: "Authors", name: "authors", widget: "string"}
+      - {label: "Score", name: "score", widget: "number"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
