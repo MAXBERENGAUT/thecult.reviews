@@ -3,11 +3,21 @@ backend:
   branch: main # Branch to update (optional; defaults to master)
 
 # These lines should *not* be indented
+publish_mode: editorial_workflow
+
 media_folder: "public/images" # Media files will be stored in the repo under static/images/uploads
 public_folder: "/images" # The src attribute for uploaded media will begin with /images/uploads
 
+site_url: https://thecult.reviews
+display_url: https://thecult.reviews
+
+# logo_url:
+
+
 collections:
   - name: "Songs" # Used in routes, e.g., /admin/collections/blog
+    extension: json
+    format: json
     label: "Songs" # Used in the UI
     folder: "content/songs" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
