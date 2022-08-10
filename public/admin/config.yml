@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  repo: maxberengaut/thecult.reviews
+  repo: MAXBERENGAUT/thecult.reviews
   branch: main # Branch to update (optional; defaults to master)
 
 # These lines should *not* be indented
