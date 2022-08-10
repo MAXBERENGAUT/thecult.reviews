@@ -6,7 +6,7 @@ const CATEGORIES = [
     { name: 'Art (Museums)', slug: 'art' },
     { name: 'Songs of the Month', slug: 'songs' },
     { name: 'Literature', slug: 'literature' },
-    { name: 'Television', slug: 'tv' },
+    { name: 'television', slug: 'tv' },
 ]
 
 function Category({name, slug}, index) {
