@@ -18,7 +18,7 @@ collections:
   - name: "Songs" # Used in routes, e.g., /admin/collections/blog
     extension: json
     format: json
-    label: "Songs" # Used in the UI
+    label: "Songs of the Month" # Used in the UI
     folder: "content/songs" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
