@@ -43,5 +43,6 @@ collections:
       - {label: "Year", name: "year", widget: "string"}
       - {label: "Authors", name: "authors", widget: "string"}
       - {label: "Score", name: "score", widget: "number", value_type: "float"}
+      - {label: "Cover", name: "cover", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
 
