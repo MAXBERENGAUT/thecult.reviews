@@ -46,3 +46,67 @@ collections:
       - {label: "Cover", name: "cover", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
 
+  - name: "Movies"
+    extension: json
+    format: json
+    label: "Movies"
+    folder: "content/movies"
+    create: true
+    slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Artist", name: "artist", widget: "string"}
+      - {label: "Year", name: "year", widget: "string"}
+      - {label: "Authors", name: "authors", widget: "string"}
+      - {label: "Score", name: "score", widget: "number", value_type: "float"}
+      - {label: "Cover", name: "cover", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "Art (Museums)"
+    extension: json
+    format: json
+    label: "Art (Museums)"
+    folder: "content/art"
+    create: true
+    slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Artist", name: "artist", widget: "string"}
+      - {label: "Year", name: "year", widget: "string"}
+      - {label: "Authors", name: "authors", widget: "string"}
+      - {label: "Score", name: "score", widget: "number", value_type: "float"}
+      - {label: "Cover", name: "cover", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "Literature"
+    extension: json
+    format: json
+    label: "Literature"
+    folder: "content/literature"
+    create: true
+    slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Artist", name: "artist", widget: "string"}
+      - {label: "Year", name: "year", widget: "string"}
+      - {label: "Authors", name: "authors", widget: "string"}
+      - {label: "Score", name: "score", widget: "number", value_type: "float"}
+      - {label: "Cover", name: "cover", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "Television"
+    extension: json
+    format: json
+    label: "Television"
+    folder: "content/tv"
+    create: true
+    slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Artist", name: "artist", widget: "string"}
+      - {label: "Year", name: "year", widget: "string"}
+      - {label: "Authors", name: "authors", widget: "string"}
+      - {label: "Score", name: "score", widget: "number", value_type: "float"}
+      - {label: "Cover", name: "cover", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+

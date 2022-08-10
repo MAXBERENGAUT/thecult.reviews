@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { loadContent } from '../content.js'
-// import Reviews from '../json/reviews.json'
 import './Songs.css';
 
 const ITEM_COUNT_MIN = 20
@@ -20,8 +19,6 @@ const MENU_DEAD_WIDTH = 0.2
 const MENU_UPDATE_TIME = 5
 
 const URL_BASE_IMAGEKIT = 'https://ik.imagekit.io/maxberengautsites/'
-// const URL_BASE_LINK = 'https://youtu.be/'
-// const URL_BASE_COVER = URL_BASE_IMAGEKIT + 'covers/'
 const URL_YT_LOGO = URL_BASE_IMAGEKIT + 'thecult_reviews/yt_logo.svg'
 const URL_BACKGROUND = 'https://static.videezy.com/system/resources/previews/000/039/223/original/51_25_08_19.mp4'
 

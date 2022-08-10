@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { loadContent } from '../content.js'
 import './Explorer.css';
 
@@ -11,14 +11,6 @@ const BREADCRUMBS = {
     'literature': 'Literature',
     'tv': 'Television'
 }
-
-// const REVIEWS = [
-//     {title: 'this is a test show title', score: 1.2},
-//     {title: 'smaller title', score: 3.4},
-//     {title: 'title', score: 5.6},
-//     {title: 'another title here', score: 7.8},
-//     {title: 'one final title', score: 9.0},
-// ]
 
 function Review(review, index) {
     let [fade, setFade] = useState('')
@@ -48,7 +40,7 @@ function Review(review, index) {
             </div>
             <div 
                 className={'score' + fade}
-                onClick={() => {window.location.href = '../review'}}
+                onClick={() => {window.location.href += `/${review.slug}`}}
             >
                 {review.score}
             </div>
@@ -58,13 +50,13 @@ function Review(review, index) {
 } 
 
 function Explorer() {
-    let pathname = useLocation().pathname.replaceAll('/', '')
-    let reviews = loadContent(pathname);
+    let category = useParams().category
+    let reviews = loadContent(category);
     let items = reviews.map(Review)
 
     return (
         <div>
-            <div id='breadcrumb'>{BREADCRUMBS[pathname]}</div>
+            <div id='breadcrumb'>{BREADCRUMBS[category]}</div>
             <div id='review-list'>
                 {items}
             </div>
