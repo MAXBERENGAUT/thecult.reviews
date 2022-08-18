@@ -14,7 +14,8 @@ function Category({name, slug}, index) {
         <h2 key={index}>
             <a 
                 href={`./${slug}`}
-                className={"category" + ((slug === 'songs') ? ' ul_gray' : '')}
+                id={slug}
+                className={"category"}
             >
                 {name}
             </a>

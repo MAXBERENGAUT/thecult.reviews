@@ -41,10 +41,12 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Artist", name: "artist", widget: "string"}
+      - {label: "Album", name: "album", widget: "string"}
       - {label: "Year", name: "year", widget: "string"}
-      - {label: "Authors", name: "authors", widget: "string"}
+
+      - {label: "Author", name: "author", widget: "string"}
       - {label: "Score", name: "score", widget: "number", value_type: "float"}
-      - {label: "Cover", name: "cover", widget: "image"}
+      - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "Movies"
@@ -56,11 +58,16 @@ collections:
     slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Artist", name: "artist", widget: "string"}
+      - {label: "Production Company", name: "company", widget: "string"}
       - {label: "Year", name: "year", widget: "string"}
-      - {label: "Authors", name: "authors", widget: "string"}
+      - {label: "Director", name: "director", widget: "string"}
+      - {label: "Screenwriter", name: "screenwriter", widget: "string"}
+      - {label: "Novelist", name: "novelist", widget: "string", required: false}
+      - {label: "Actors", name: "actors", widget: "string"}
+      
+      - {label: "Author", name: "author", widget: "string"}
       - {label: "Score", name: "score", widget: "number", value_type: "float"}
-      - {label: "Cover", name: "cover", widget: "image"}
+      - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "Art (Museums)"
@@ -71,12 +78,15 @@ collections:
     create: true
     slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Artist", name: "artist", widget: "string"}
+      - {label: "Title (Of Exhibit)", name: "title", widget: "string"}
+      - {label: "Artist(s)", name: "artist", widget: "string"}
       - {label: "Year", name: "year", widget: "string"}
-      - {label: "Authors", name: "authors", widget: "string"}
+      - {label: "Museum", name: "museum", widget: "string"}
+      - {label: "Creator", name: "creator", widget: "string"}
+
+      - {label: "Author", name: "author", widget: "string"}
       - {label: "Score", name: "score", widget: "number", value_type: "float"}
-      - {label: "Cover", name: "cover", widget: "image"}
+      - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "Literature"
@@ -88,11 +98,12 @@ collections:
     slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Artist", name: "artist", widget: "string"}
+      - {label: "Author", name: "writer", widget: "string"}
       - {label: "Year", name: "year", widget: "string"}
-      - {label: "Authors", name: "authors", widget: "string"}
+
+      - {label: "Author", name: "author", widget: "string"}
       - {label: "Score", name: "score", widget: "number", value_type: "float"}
-      - {label: "Cover", name: "cover", widget: "image"}
+      - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "Television"
@@ -104,9 +115,12 @@ collections:
     slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Artist", name: "artist", widget: "string"}
+      - {label: "Network", name: "network", widget: "string"}
+      - {label: "Creator", name: "creator", widget: "string"}
+      - {label: "Actors", name: "actors", widget: "string"}
       - {label: "Year", name: "year", widget: "string"}
-      - {label: "Authors", name: "authors", widget: "string"}
+
+      - {label: "Author", name: "author", widget: "string"}
       - {label: "Score", name: "score", widget: "number", value_type: "float"}
       - {label: "Cover", name: "cover", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
