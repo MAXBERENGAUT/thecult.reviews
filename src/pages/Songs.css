@@ -1,22 +1,9 @@
-video {
+#songs-background {
     position: fixed;
     right: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-}
-  
-footer {
-    position: fixed;
-    display: block;
-    text-align: center;
-    font-size: 0.85em;
-    letter-spacing: 0.03em;
-    word-spacing: 0.5em;
-    left: 50%;
-    bottom: 0;
-    margin: 0 auto;
-    transform: translate(-50%, 0);
 }
   
 #menu-songs {

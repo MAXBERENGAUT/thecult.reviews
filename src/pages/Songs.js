@@ -185,6 +185,7 @@ function Songs() {
             style={{overflowX: 'hidden', backgroundColor: 'black'}}
         >
             <video 
+                id='songs-background'
                 autoPlay 
                 muted 
                 loop 
