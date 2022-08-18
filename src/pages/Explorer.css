@@ -1,11 +1,21 @@
 #breadcrumb {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    padding: 2vw;
+    width: 20vw;
     font-family: 'Georgia';
     font-size: 275%;
     color: black;
     word-spacing: 0.25em;
+}
+
+.bc-left {
+    left: 0;
+    right: auto;
+}
+
+.bc-right {
+    right: 0;
+    left: auto;
 }
 
 #review-list {
