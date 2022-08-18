@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+import Arrow from './Arrow'
 import './Review.css';
 
 function Metadata(category, review) {
@@ -57,6 +58,7 @@ function Review() {
 
     return (
         <div id='review-wrap'>
+            <Arrow />
             <div id='review-head'>
                 <div>
                     <div id='review-info'>

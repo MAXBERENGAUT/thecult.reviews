@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react'
-import { useParams } from 'react-router-dom'
-import { loadContent } from '../content.js'
+import React, { useState, useRef } from 'react';
+import { useParams } from 'react-router-dom';
+import { loadContent } from '../content';
+import Arrow from './Arrow';
 import './Explorer.css';
 
 const BREADCRUMBS = {
@@ -55,15 +56,6 @@ function choose(array) {
 
 function Breadcrumb(category) {
     let style = useRef({});
-    // let style = {
-    //     position: 'fixed',
-    //     fontFamily: 'Georgia',
-    //     fontSize: '275%',
-    //     color: 'black',
-    //     wordSpacing: '0.25em'
-    // }
-
-    console.log(style.current)
     if (!('top' in style.current)){
         style.current['top'] = `${Math.random() * 90}vh`
         style.current['textAlign'] = choose(['left', 'right', 'center'])
@@ -88,14 +80,8 @@ function Explorer() {
 
     return (
         <div>
+            <Arrow />
             {Breadcrumb(category)}
-            {/* TODO: randomly reposition breadcrumb until not colliding with review
-                - random chance of left, center, or right text align
-                - random chance of left: 0 or right: 0
-                - random top
-                - width: 
-            
-            */}
             <div id='review-list'>
                 {items}
             </div>
