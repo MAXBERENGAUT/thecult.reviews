@@ -7,9 +7,10 @@ const CATEGORIES = [
     { name: 'Songs of the Month', slug: 'songs' },
     { name: 'Literature', slug: 'literature' },
     { name: 'Television', slug: 'tv' },
-    { name: 'Television', slug: 'tv' },
-    { name: 'Television', slug: 'tv' },
-    { name: 'Television', slug: 'tv' },
+    { name: 'Lists', slug: '' },
+    { name: 'Memes', slug: '' },
+    { name: 'People', slug: '' },
+    { name: 'Write for Us', slug: '' },
 ]
 
 function Category({name, slug}, index) {
