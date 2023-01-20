@@ -1,4 +1,31 @@
 
+/* 
+
+const categoryPaths = {
+  music: '/content/music',
+  movies: '/content/movies',
+  art: '/content/art',
+  songs: '/content/songs',
+  literature: '/content/literature',
+  television: '/content/tv'
+}
+
+export function loadContent(category) {
+  const path = categoryPaths[category]
+  if (!path) {
+    return []
+  }
+
+  return require.context(path, true, /.json$/).keys().map(key => {
+    let slug = key.replace('./', '')
+    let content = require(`${path}/${slug}`)
+    content['slug'] = slug.replace('.json', '')
+    return content
+  })
+}
+
+*/
+
 // TODO: turn this into a function that creates/exports functions
 export function loadContent(category) {
     switch (category) {

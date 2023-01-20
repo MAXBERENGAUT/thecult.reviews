@@ -31,14 +31,21 @@ function Review(review, index) {
             key={index}
             onMouseLeave={onMouseLeave}
         >
-            <div className={'dot' + fade} />
-            <div 
-                className="title"
+            <div className={'dot' + fade}>
+                <div className="upper">
+                    {review.artist || review.director}
+                </div>
+                <div className="lower">
+                    {review.title}
+                </div>
+            </div>
+            <img 
+                className={'title'}
+                src={review.image}
+                alt={review.title}
                 onMouseEnter={onMouseEnter}
                 onMouseOver={onMouseEnter}    
-            >
-                {review.title}
-            </div>
+            />
             <div 
                 className={'score' + fade}
                 onClick={() => {window.location.href += `/${review.slug}`}}
@@ -66,7 +73,6 @@ function Breadcrumb(category) {
         <div 
             id='breadcrumb' 
             style={style.current}
-            // className={choose(['bc-left', 'bc-right'])}
         >
             {BREADCRUMBS[category]}
         </div>
