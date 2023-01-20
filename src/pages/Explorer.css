@@ -143,3 +143,22 @@
 .score.fade-in {
     cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+    /* Add styles here that will apply when the screen width is less than or equal to 768px */
+    .review {
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+    
+        --box-size: 30vw;
+    }
+    
+    .review > .dot {
+        font-size: inherit;
+
+    }
+
+    .review > .score {
+        font-size: 10vw;
+    }
+}

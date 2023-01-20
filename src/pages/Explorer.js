@@ -44,7 +44,11 @@ function Review(review, index) {
                 src={review.image}
                 alt={review.title}
                 onMouseEnter={onMouseEnter}
-                onMouseOver={onMouseEnter}    
+                onMouseOver={onMouseEnter}
+                onTouchStart={() => (
+                    setFade(fade === ' fade-in' ? ' fade-out' : ' fade-in')
+                )}
+ 
             />
             <Link 
                 className={'score' + fade}

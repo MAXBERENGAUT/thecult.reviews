@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom'
 import Arrow from './Arrow'
 import './Review.css';
 
-function Metadata(category, review) {
+function Information(category, review) {
     switch(category) {
         case 'music':
             return [
@@ -62,7 +62,7 @@ function Review() {
             <div id='review-head'>
                 <div>
                     <div id='review-info'>
-                        {Metadata(params.category, review)}
+                        {Information(params.category, review)}
                     </div>
                 </div>
                 <div>
