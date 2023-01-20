@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { loadContent } from '../content';
 import Arrow from './Arrow';
 import './Explorer.css';
@@ -46,12 +46,12 @@ function Review(review, index) {
                 onMouseEnter={onMouseEnter}
                 onMouseOver={onMouseEnter}    
             />
-            <div 
+            <Link 
                 className={'score' + fade}
-                onClick={() => {window.location.href += `/${review.slug}`}}
+                to={review.slug}
             >
                 {review.score}
-            </div>
+            </Link>
             <div className={'line' + fade} />
         </div>
     )

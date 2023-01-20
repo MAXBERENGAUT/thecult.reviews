@@ -50,6 +50,11 @@
     /* place-items: center; */
     font-size: 2vw;
     /* overflow: hidden; */
+    cursor: default;
+}
+
+.dot.fade-in{
+    cursor: auto;
 }
 
 .review > .dot::before {
@@ -124,11 +129,17 @@
     font-family: Garamond;
     font-size: 6vw;
 
-    cursor: pointer;
+    cursor: default;
+    text-decoration: none;
+    color: black;
     
     width: var(--box-size);
     height: var(--box-size);
     margin: auto 0;
 
     border-radius: 50%;
+}
+
+.score.fade-in {
+    cursor: pointer;
 }

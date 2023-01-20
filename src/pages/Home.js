@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 const CATEGORIES = [
@@ -16,13 +17,13 @@ const CATEGORIES = [
 function Category({name, slug}, index) {
     return (
         <h2 key={index}>
-            <a 
-                href={`./${slug}`}
+            <Link 
+                to={slug}
                 id={slug}
                 className={"category"}
             >
                 {name}
-            </a>
+            </Link>
         </h2>
     )
 }
