@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { loadContent } from '../content.js'
+import { ContentLoader } from '../content.js'
 import './Songs.css';
 
 const ITEM_COUNT_MIN = 20
@@ -8,7 +8,7 @@ const ITEM_MARGIN = 30
 // const ITEM_BORDER = 2
 const ITEM_BORDER = 0
 const ITEM_LENGTH = ITEM_WIDTH + 2*(ITEM_MARGIN + ITEM_BORDER)
-console.log(ITEM_LENGTH)
+// console.log(ITEM_LENGTH)
 
 const MENU_INIT_OFFSET = 0
 const MENU_RESISTANCE = 0.05
@@ -77,7 +77,7 @@ function Menu() {
     const [velocity, setVelocity] = useState(0)
 
     const [items, setItems] = useState(() => {
-        let songs = loadContent('songs');
+        let songs = ContentLoader['songs']();
 
         // pad songs to fill screen
         while (songs.length < ITEM_COUNT_MIN) {

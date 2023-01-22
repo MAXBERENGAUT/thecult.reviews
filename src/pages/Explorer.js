@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { loadContent } from '../content';
+import { ContentLoader } from '../content';
 import Arrow from './Arrow';
 import './Explorer.css';
 
@@ -86,7 +86,7 @@ function Breadcrumb(category) {
 
 function Explorer() {
     let category = useParams().category
-    const reviews = loadContent(category);
+    const reviews = ContentLoader[category]();
     let items = reviews.map(Review)
 
     return (
