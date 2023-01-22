@@ -53,6 +53,7 @@ function Review(review, index) {
             <Link 
                 className={'score' + fade}
                 to={review.slug}
+                reloadDocument
             >
                 {review.score}
             </Link>

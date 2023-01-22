@@ -4,7 +4,7 @@ import './Arrow.css'
 
 function Arrow() {
     return (
-        <Link to="./.." className="arrow">↩</Link>
+        <Link to="./.." className="arrow" reloadDocument>↩</Link>
     )
 }
 

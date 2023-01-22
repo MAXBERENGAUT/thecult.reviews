@@ -19,6 +19,7 @@ function Category({name, slug}, index) {
         <h2 key={index}>
             <Link 
                 to={slug}
+                reloadDocument
                 id={slug}
                 className={"category"}
             >
