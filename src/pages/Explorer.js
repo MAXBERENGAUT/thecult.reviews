@@ -86,7 +86,7 @@ function Breadcrumb(category) {
 
 function Explorer() {
     let category = useParams().category
-    let reviews = loadContent(category);
+    const reviews = loadContent(category);
     let items = reviews.map(Review)
 
     return (

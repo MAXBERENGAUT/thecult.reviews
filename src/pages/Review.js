@@ -3,7 +3,7 @@ import Arrow from './Arrow'
 import './Review.css';
 
 function Information(category, review) {
-    switch(category) {
+    switch (category) {
         case 'music':
             return [
                 <div>{review.title}</div>,
@@ -54,7 +54,8 @@ function Information(category, review) {
 
 function Review() {
     let params = useParams()
-    let review = require(`/content/${params.category}/${params.slug}`)
+    const review = require(`/content/${params.category}/${params.slug}`)
+    let imgOffset = 1.5;
 
     return (
         <div id='review-wrap'>
@@ -68,13 +69,23 @@ function Review() {
                 <div>
                     <div id='review-score'>{review.score}</div>
                 </div>
-                <div>
-                    <img 
-                        id='review-poster'
-                        className='tilt'
-                        src={review.images[0]}
-                        alt={review.title + ' featured image'}
-                    />                
+                <div className="stack"
+                    style={{
+                        marginBottom: `${ review.images.length * imgOffset}vw`,
+                        marginLeft: `${ review.images.length * imgOffset}vw`
+                    }}
+                >
+                    {review.images.map((image, index) => (
+                        <img
+                            key={index}
+                            className={`review-poster`}
+                            src={image}
+                            alt={review.title + ' featured image'}
+                            style={{ 
+                                transform: `translate(${index * -imgOffset}vw, ${index * imgOffset}vw)` 
+                            }}
+                        />
+                    ))}
                 </div>
             </div>
             <div id='review-body'>{review.body}</div>
