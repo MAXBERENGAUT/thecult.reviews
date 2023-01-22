@@ -60,19 +60,21 @@
 }
 
 
-.poster {
+.image {
     width: 80%;
     border: black solid 2px;
     background-color: white;
-    /* z-index: 0; */
-    transition: 1.0s ease all;
-
+    transition: 0.5s ease all;
 }
 
-.poster:not(:first-child) {
+.image:not(:first-child) {
     position: absolute;
 }
 
-.poster:hover {
-    z-index: 1;
+.hide {
+    opacity: 0;
+}
+
+.hide:hover {
+    opacity: 1;
 }

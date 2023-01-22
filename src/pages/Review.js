@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Arrow from './Arrow'
 import styles from './Review.module.css'
@@ -52,13 +52,12 @@ const Info = {
     )
 }
 
-function FeaturedImage (image, index) {
-    let offset = index * FEATURED_IMAGE_OFFSET
-
+function Image (image, index, isHover) {
+    const offset = index * FEATURED_IMAGE_OFFSET
     return (
         <img
             key={index}
-            className={styles.poster}
+            className={styles.image + ' ' + (isHover ? styles.hide : '')}
             src={image}
             alt={'album cover'}
             style={{ transform: `translate(${-offset}vw, ${offset}vw)` }}
@@ -66,11 +65,16 @@ function FeaturedImage (image, index) {
     )
 }
 
+const FeaturedImage = (image, index) => Image(image, index, false);
+const HoverImage = (image, index) => Image(image, index, true);
+
 function Review() {
     let { category, slug } = useParams()
     const review = require(`/content/${category}/${slug}`)
     const info = Info[category] ? Info[category](review) : null
-    const images = review.images.reverse().map(FeaturedImage)
+    let images = [...review.images].reverse()
+    const featuredImages = images.map(FeaturedImage)
+    const hoverImages = images.map(HoverImage)
 
     return (
         <main id={styles.review}>
@@ -91,7 +95,8 @@ function Review() {
                         marginLeft: `${ review.images.length * FEATURED_IMAGE_OFFSET}vw`
                     }}
                 >
-                    {images}
+                    {featuredImages}
+                    {hoverImages}
                 </div>
             </div>
             <div id={styles.body}>{review.body}</div>
