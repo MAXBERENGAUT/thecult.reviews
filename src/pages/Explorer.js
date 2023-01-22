@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { ContentLoader } from '../content';
-import Arrow from './Arrow';
-import './Explorer.css';
+import React, { useState, useRef } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import { CollectionLoader } from '../CollectionLoader'
+import Arrow from './Arrow'
+import styles from './Explorer.module.css'
 
-const BREADCRUMBS = {
+const TITLES = {
     'music': 'Music',
     'movies': 'Movies',
     'art': 'Art (Museums)',
@@ -14,50 +14,41 @@ const BREADCRUMBS = {
 }
 
 function Review(review, index) {
-    let [fade, setFade] = useState('')
-
-    function onMouseEnter() {
-        setFade(' fade-in')
-    }
-
-    function onMouseLeave() {
-        setFade(' fade-out')
-    }
-
+    const [fade, setFade] = useState('')
 
     return (
         <div 
-            className="review"
+            className={styles.review}
             key={index}
-            onMouseLeave={onMouseLeave}
+            onMouseLeave={() => setFade('fade-out')}
         >
-            <div className={'dot' + fade}>
-                <div className="upper">
+            <div className={styles.title + ' ' + fade}>
+                <div className={styles.upper}>
                     {review.artist || review.director}
                 </div>
-                <div className="lower">
+                <div className={styles.lower}>
                     {review.title}
                 </div>
             </div>
             <img 
-                className={'title'}
+                className={styles.image}
                 src={review.images[0]}
                 alt={review.title}
-                onMouseEnter={onMouseEnter}
-                onMouseOver={onMouseEnter}
+                onMouseEnter={() => setFade('fade-in')}
+                onMouseOver={() => setFade('fade-in')}
                 onTouchStart={() => (
-                    setFade(fade === ' fade-in' ? ' fade-out' : ' fade-in')
-                )}
- 
+                    setFade(fade === 'fade-in' ? 'fade-out' : 'fade-in')
+                )} 
             />
             <Link 
-                className={'score' + fade}
+                className={styles.score + ' ' + fade}
                 to={review.slug}
                 reloadDocument
+                style={{cursor: fade === 'fade-in' ? 'pointer' : 'default' }}
             >
                 {review.score}
             </Link>
-            <div className={'line' + fade} />
+            <div className={styles.line + ' ' + fade} />
         </div>
     )
 } 
@@ -66,7 +57,7 @@ function choose(array) {
     return array[Math.floor(Math.random() * array.length)]
 }
 
-function Breadcrumb(category) {
+function Title(category) {
     let style = useRef({});
     if (!('top' in style.current)){
         style.current['top'] = `${Math.random() * 90}vh`
@@ -76,27 +67,27 @@ function Breadcrumb(category) {
 
     return (
         <div 
-            id='breadcrumb' 
+            id={styles.title}
             style={style.current}
         >
-            {BREADCRUMBS[category]}
+            {TITLES[category]}
         </div>
     )
 }
 
 function Explorer() {
-    let category = useParams().category
-    const reviews = ContentLoader[category]();
-    let items = reviews.map(Review)
+    const category = useParams().category
+    const reviews = CollectionLoader[category]();
+    const items = reviews.map(Review)
 
     return (
-        <div>
+        <main>
             <Arrow />
-            {Breadcrumb(category)}
-            <div id='review-list'>
+            {Title(category)}
+            <div id={styles.list}>
                 {items}
             </div>
-        </div>
+        </main>
     )
 }
 

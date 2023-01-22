@@ -1,4 +1,4 @@
-#menu-home {
+#home {
     font-family: 'Georgia';
     font-size: 275%;
     color: black;
@@ -25,11 +25,11 @@
     text-decoration-thickness: 0.05em;
 }
 
-.category {
+.link {
     text-decoration: none;
     color: black;
 }
 
-.category:visited {
+.link:visited {
     color: black;
 }

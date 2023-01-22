@@ -6,7 +6,7 @@ const extract = (category, key) => {
     return content
 }
 
-export const ContentLoader = {
+export const CollectionLoader = {
     music: () => require.context('/content/music', true, /.json$/).keys().map((key) => extract('music', key)),
     movies: () => require.context('/content/movies', true, /.json$/).keys().map((key) => extract('movies', key)),
     art: () => require.context('/content/art', true, /.json$/).keys().map((key) => extract('art', key)),

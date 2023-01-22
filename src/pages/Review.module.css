@@ -1,25 +1,17 @@
-/* REVIEWS PAGE */
-
-#review-wrap {
+#review {
     font-family: Georgia;
 }
 
-#review-head {
+#head {
     display: flex;
     justify-content: space-around;
 }
 
-#review-head > div {
+#head > div {
     flex: 1 1 0;
 }
 
-#review-info {
-    /* position: relative; */
-
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-
+#info {
     line-height: 200%;
     padding-top: 5vw;
     padding-left: 5vw;
@@ -29,7 +21,7 @@
     word-spacing: 0.25em;
 }
 
-#review-score {
+#score {
     position: relative;
     display: inline-flex;
     flex-direction: column;
@@ -50,7 +42,7 @@
     border-radius: 50%;
 }
 
-#review-body {
+#body {
     margin: 5vw 10vw;
     font-size: 200%;
     line-height: 150%;
@@ -58,7 +50,7 @@
     white-space: pre-wrap;
 }
 
-.stack {
+#stack {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,7 +60,7 @@
 }
 
 
-.review-poster {
+.poster {
     width: 80%;
     border: black solid 2px;
     background-color: white;
@@ -77,10 +69,10 @@
 
 }
 
-.review-poster:not(:first-child) {
+.poster:not(:first-child) {
     position: absolute;
 }
 
-.review-poster:hover {
+.poster:hover {
     z-index: 1;
 }

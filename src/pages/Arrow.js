@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-import './Arrow.css'
+import { Link } from 'react-router-dom'
+import styles from './Arrow.module.css'
 
 function Arrow() {
     return (
-        <Link to="./.." className="arrow" reloadDocument>↩</Link>
+        <Link to="./.." id={styles.arrow} reloadDocument>↩</Link>
     )
 }
 

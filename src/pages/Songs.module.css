@@ -1,4 +1,9 @@
-#songs-background {
+#songs {
+    overflow-x: hidden;
+    background-color: black;
+}
+
+#background {
     position: fixed;
     right: 0;
     bottom: 0;
@@ -6,7 +11,7 @@
     min-height: 100%;
 }
   
-#menu-songs {
+#menu {
     white-space: nowrap;
     display: flex;
     flex-wrap: nowrap;
@@ -31,6 +36,10 @@
     white-space: normal;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.7);
+    font-family: 'Raleway', Verdana;
+    color: white;
+    word-spacing: 0.25em;
+    line-height: 1.5em;
 }
   
 .content {
@@ -68,15 +77,7 @@
     transform-origin        : center;
     transition              : transform 1.0s ease all;
 }
-  
-.artist {
 
-}
-
-.song {
-
-}
-  
 .album {
     font-size: 90%;
     font-style: italic;
@@ -88,14 +89,7 @@
     color: lightgray;
 }
   
-.yt-logo {
+.yt_logo {
     filter: invert();
     height: 45px;
-    /* margin-top: 10px; */
-    /* margin-bottom: 10px; */
-    /* max-width: 15%; */
-    /* position: absolute; */
-    /* bottom: 2%; */
-    /* left: 50%; */
-    /* transform: translate(-50%); */
 }

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './Home.css';
+import styles from './Home.module.css';
 
 const CATEGORIES = [
     { name: 'Music', slug: 'music' },
@@ -20,8 +20,8 @@ function Category({name, slug}, index) {
             <Link 
                 to={slug}
                 reloadDocument
-                id={slug}
-                className={"category"}
+                id={styles[slug]}
+                className={styles.link}
             >
                 {name}
             </Link>
@@ -33,10 +33,10 @@ function Home() {
     let items = CATEGORIES.map(Category)
 
     return (
-        <div id='menu-home'>
-            <h1 id='title'>The Cult</h1>
+        <main id={styles.home}>
+            <h1 id={styles.title}>The Cult</h1>
             {items}
-        </div>
+        </main>
     )
 }
 

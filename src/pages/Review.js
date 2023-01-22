@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { useParams } from 'react-router-dom'
 import Arrow from './Arrow'
-import './Review.css';
+import styles from './Review.module.css'
 
 const FEATURED_IMAGE_OFFSET = 0.8
 
@@ -58,7 +58,7 @@ function FeaturedImage (image, index) {
     return (
         <img
             key={index}
-            className={`review-poster`}
+            className={styles.poster}
             src={image}
             alt={'album cover'}
             style={{ transform: `translate(${-offset}vw, ${offset}vw)` }}
@@ -73,18 +73,19 @@ function Review() {
     const images = review.images.reverse().map(FeaturedImage)
 
     return (
-        <main id='review-wrap'>
+        <main id={styles.review}>
             <Arrow />
-            <div id='review-head'>
+            <div id={styles.head}>
                 <div>
-                    <div id='review-info'>
+                    <div id={styles.info}>
                         { info }
                     </div>
                 </div>
                 <div>
-                    <div id='review-score'>{review.score}</div>
+                    <div id={styles.score}>{review.score}</div>
                 </div>
-                <div className="stack"
+                <div 
+                    id={styles.stack}
                     style={{
                         marginBottom: `${ review.images.length * FEATURED_IMAGE_OFFSET}vw`,
                         marginLeft: `${ review.images.length * FEATURED_IMAGE_OFFSET}vw`
@@ -93,7 +94,7 @@ function Review() {
                     {images}
                 </div>
             </div>
-            <div id='review-body'>{review.body}</div>
+            <div id={styles.body}>{review.body}</div>
         </main>
     )
 }

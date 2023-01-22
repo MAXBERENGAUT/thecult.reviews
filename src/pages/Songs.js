@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { ContentLoader } from '../content.js'
-import './Songs.css';
+import { CollectionLoader } from '../CollectionLoader.js'
+import styles from './Songs.module.css'
 
 const ITEM_COUNT_MIN = 20
 const ITEM_WIDTH = 300
@@ -38,31 +38,24 @@ const COLORS = [
 function Song(entry, index) {
     return (
         <div 
-            className='item' 
+            className={styles.item} 
             key={index} 
-            // style={{boxShadow: `inset 0 0 4px 4px #${COLORS[index % COLORS.length]}`}}
-            style={{
-                boxShadow: `inset 0 0 0 4px #fff, inset 0 0 0 6px #${COLORS[index % COLORS.length]}`,
-                fontFamily: "'Raleway', Verdana",
-                color: "white",
-                wordSpacing: "0.25em",
-                lineHeight: "1.5em"
-            }}
+            style={{ boxShadow: `inset 0 0 0 4px #fff, inset 0 0 0 6px #${COLORS[index % COLORS.length]}` }}
         >
             <img 
-                className='cover tilt' 
+                className={styles.cover + ' ' + styles.tilt}
                 src={entry.cover} 
                 alt={entry.album + ' cover'} 
             />
-            <div className='content'>
-                <p className='song'>{entry.title}</p>
-                <p className='artist'>{entry.artist}</p>
-                <p className='album'>{entry.album}</p>
-                <p className='year'>{entry.year}</p>
+            <div className={styles.content}>
+                <p className={styles.song}>{entry.title}</p>
+                <p className={styles.artist}>{entry.artist}</p>
+                <p className={styles.album}>{entry.album}</p>
+                <p className={styles.year}>{entry.year}</p>
             </div>
             <a href={entry.yt_link}>
                 <img 
-                    className='yt-logo'
+                    className={styles.yt_logo}
                     src={URL_YT_LOGO}
                     alt='YouTube logo'
                 />
@@ -77,7 +70,7 @@ function Menu() {
     const [velocity, setVelocity] = useState(0)
 
     const [items, setItems] = useState(() => {
-        let songs = ContentLoader['songs']();
+        let songs = CollectionLoader.songs();
 
         // pad songs to fill screen
         while (songs.length < ITEM_COUNT_MIN) {
@@ -149,27 +142,17 @@ function Menu() {
         }
     }, [velocity, offset])
 
-    function onMouseMove(e) {
-        mouse.current.x = e.screenX
-        mouse.current.y = e.screenY
-    }
-
-    function onMouseEnter() {
-        mouse.current.isPresent = true
-    }
-
-    function onMouseLeave() {
-        mouse.current.isPresent = false
-    }
-
     return (
         <div 
             ref={menu}
-            id='menu-songs' 
+            id={styles.menu}
             style={{transform: `translateX(${offset}px)`}}
-            onMouseMove={onMouseMove}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
+            onMouseMove={(e) => {        
+                mouse.current.x = e.screenX
+                mouse.current.y = e.screenY
+            }}
+            onMouseEnter={() => (mouse.current.isPresent = true)}
+            onMouseLeave={() => (mouse.current.isPresent = false)}
         >
             {items}
         </div>
@@ -180,12 +163,9 @@ function Menu() {
 
 function Songs() {
     return (
-        <div 
-            className="container"
-            style={{overflowX: 'hidden', backgroundColor: 'black'}}
-        >
+        <main id={styles.songs}>
             <video 
-                id='songs-background'
+                id={styles.background}
                 autoPlay 
                 muted 
                 loop 
@@ -193,7 +173,7 @@ function Songs() {
                 type='video/mp4' 
             />
             <Menu />
-        </div>
+        </main>
     )
 }
 
