@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import Arrow from './Arrow'
 import './Review.css';
 
-const FEATURED_IMAGE_OFFSET = 0.25
+const FEATURED_IMAGE_OFFSET = 1.5
 
 const Info = {
     music: (review) => (
@@ -89,7 +89,7 @@ function Review() {
                         marginLeft: `${ review.images.length * FEATURED_IMAGE_OFFSET}vw`
                     }}
                 >
-                    {review.images.map(FeaturedImage)}
+                    {review.images.reverse().map(FeaturedImage)}
                 </div>
             </div>
             <div id='review-body'>{review.body}</div>
