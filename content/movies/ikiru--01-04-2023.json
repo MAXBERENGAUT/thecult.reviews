@@ -4,9 +4,11 @@
   "director": "Akira Kurosawa",
   "score": 9.9,
   "title": "Ikiru",
-  "image": "/images/mv5bndiwm2jmmmutmdrimy00ndk0ltllndctmjninzjjmzvhyzuyxkeyxkfqcgdeqxvyndqzmdg4nzk-._v1_.jpg",
   "year": "1952",
-  "company": "Sōjirō Motoki",
+  "company": "S\u00c5\u008djir\u00c5\u008d Motoki",
   "actors": "Takashi Shimura, Miki Odagiri",
-  "screenwriter": "Akira Kurosawa, Shinobu Hashimoto, Hideo Oguni"
+  "screenwriter": "Akira Kurosawa, Shinobu Hashimoto, Hideo Oguni",
+  "images": [
+    "/images/mv5bndiwm2jmmmutmdrimy00ndk0ltllndctmjninzjjmzvhyzuyxkeyxkfqcgdeqxvyndqzmdg4nzk-._v1_.jpg"
+  ]
 }

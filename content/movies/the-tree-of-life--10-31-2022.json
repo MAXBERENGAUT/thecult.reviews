@@ -4,9 +4,11 @@
   "director": "Terrence Malick",
   "score": 2.8,
   "title": "The Tree of Life",
-  "image": "/images/039561_wide-803a5daeb56c4a3dcbf50cab333db01436f1b92f-s1100-c50.jpg",
   "year": "2011",
   "company": "Fox Searchlight Pictures",
   "actors": "Jessica Chastain, Brad Pitt, Tye Sheridan",
-  "screenwriter": "Terrence Malick"
+  "screenwriter": "Terrence Malick",
+  "images": [
+    "/images/039561_wide-803a5daeb56c4a3dcbf50cab333db01436f1b92f-s1100-c50.jpg"
+  ]
 }

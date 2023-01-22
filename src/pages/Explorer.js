@@ -41,7 +41,7 @@ function Review(review, index) {
             </div>
             <img 
                 className={'title'}
-                src={review.image}
+                src={review.images[0]}
                 alt={review.title}
                 onMouseEnter={onMouseEnter}
                 onMouseOver={onMouseEnter}

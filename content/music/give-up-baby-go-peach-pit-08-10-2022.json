@@ -1,11 +1,13 @@
 {
-  "body": "H﻿ello Joshua please finish this review when you get the chance.",
+  "body": "H\u00ef\u00bb\u00bfello Joshua please finish this review when you get the chance.",
   "artist": "Peach Pit",
   "authors": "Joshua Devine",
   "author": "Joshua Devine",
   "album": "From 2 to 3",
   "score": 9.8,
   "title": "Give Up Baby Go",
-  "image": "https://i.scdn.co/image/ab67616d0000b2731106bbfbbc49692e49f3b580",
-  "year": "2022"
+  "year": "2022",
+  "images": [
+    "https://i.scdn.co/image/ab67616d0000b2731106bbfbbc49692e49f3b580"
+  ]
 }

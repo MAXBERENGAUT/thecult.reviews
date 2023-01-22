@@ -6,6 +6,8 @@
   "museum": "National Gallery of Art, West Building",
   "score": 10,
   "title": "American Silence: The Photographs of Robert Adams",
-  "image": "https://www.nga.gov/content/dam/ngaweb/press/exhibition/2022/5091/lrg-5091-068.jpg",
-  "year": "1950-2022"
+  "year": "1950-2022",
+  "images": [
+    "https://www.nga.gov/content/dam/ngaweb/press/exhibition/2022/5091/lrg-5091-068.jpg"
+  ]
 }

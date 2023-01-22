@@ -72,7 +72,7 @@ function Review() {
                     <img 
                         id='review-poster'
                         className='tilt'
-                        src={review.image}
+                        src={review.images[0]}
                         alt={review.title + ' featured image'}
                     />                
                 </div>

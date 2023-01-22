@@ -46,8 +46,12 @@ collections:
 
       - {label: "Author", name: "author", widget: "string"}
       - {label: "Score", name: "score", widget: "number", value_type: "float"}
-      - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {
+          label: "Featured Images", name: "images", widget: "list", 
+          summary: '{{fields.image}}',
+          field: {label: Image, name: image, widget: image}
+        }
 
   - name: "Movies"
     extension: json
@@ -67,8 +71,12 @@ collections:
       
       - {label: "Author", name: "author", widget: "string"}
       - {label: "Score", name: "score", widget: "number", value_type: "float"}
-      - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {
+          label: "Featured Images", name: "images", widget: "list", 
+          summary: '{{fields.image}}',
+          field: {label: Image, name: image, widget: image}
+        }
 
   - name: "Art (Museums)"
     extension: json
@@ -86,8 +94,12 @@ collections:
 
       - {label: "Author", name: "author", widget: "string"}
       - {label: "Score", name: "score", widget: "number", value_type: "float"}
-      - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {
+          label: "Featured Images", name: "images", widget: "list", 
+          summary: '{{fields.image}}',
+          field: {label: Image, name: image, widget: image}
+        }
 
   - name: "Literature"
     extension: json
@@ -103,8 +115,12 @@ collections:
 
       - {label: "Author", name: "author", widget: "string"}
       - {label: "Score", name: "score", widget: "number", value_type: "float"}
-      - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {
+          label: "Featured Images", name: "images", widget: "list", 
+          summary: '{{fields.image}}',
+          field: {label: Image, name: image, widget: image}
+        }
 
   - name: "Television"
     extension: json
@@ -118,24 +134,6 @@ collections:
       - {label: "Network", name: "network", widget: "string"}
       - {label: "Creator", name: "creator", widget: "string"}
       - {label: "Actors", name: "actors", widget: "string"}
-      - {label: "Year", name: "year", widget: "string"}
-
-      - {label: "Author", name: "author", widget: "string"}
-      - {label: "Score", name: "score", widget: "number", value_type: "float"}
-      - {label: "Cover", name: "cover", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
-
-  - name: "Test"
-    extension: json
-    format: json
-    label: "Test"
-    folder: "content/test"
-    create: true
-    slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Artist", name: "artist", widget: "string"}
-      - {label: "Album", name: "album", widget: "string"}
       - {label: "Year", name: "year", widget: "string"}
 
       - {label: "Author", name: "author", widget: "string"}

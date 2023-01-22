@@ -4,9 +4,11 @@
   "director": "George Marshall",
   "score": 7.8,
   "title": "The Blue Dahlia",
-  "image": "/images/p612_i_v9_aa.jpg",
   "year": "1946",
   "company": "Paramount Pictures",
   "actors": "Alan Ladd, Veronica Lake, William Bendix, Howard Da Silva, Doris Dowling",
-  "screenwriter": "Raymond Chandler"
+  "screenwriter": "Raymond Chandler",
+  "images": [
+    "/images/p612_i_v9_aa.jpg"
+  ]
 }

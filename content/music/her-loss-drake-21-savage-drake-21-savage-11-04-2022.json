@@ -6,5 +6,7 @@
   "year": "2022",
   "author": "Max Berengaut",
   "score": 6.9,
-  "image": "https://upload.wikimedia.org/wikipedia/en/a/a5/Her_Loss.jpeg"
+  "images": [
+    "https://upload.wikimedia.org/wikipedia/en/a/a5/Her_Loss.jpeg"
+  ]
 }

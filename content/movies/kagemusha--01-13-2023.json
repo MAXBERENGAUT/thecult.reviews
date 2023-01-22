@@ -4,9 +4,11 @@
   "director": "Akira Kurosawa",
   "score": 10,
   "title": "Kagemusha",
-  "image": "/images/img_current_588_150_original.png",
   "year": "1980",
   "company": "20th Century Fox",
   "actors": "Tatsuya Nakadai, Tsutomu Yamazaki, Masayuki Yui",
-  "screenwriter": "Akira Kurosawa, Masato Ide"
+  "screenwriter": "Akira Kurosawa, Masato Ide",
+  "images": [
+    "/images/img_current_588_150_original.png"
+  ]
 }

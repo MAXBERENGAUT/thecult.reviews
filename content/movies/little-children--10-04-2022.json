@@ -5,9 +5,11 @@
   "novelist": "Tom Perrotta",
   "score": 9.5,
   "title": "Little Children",
-  "image": "/images/little-children-hero.jpg",
   "year": "2006",
   "company": "New Line Cinema",
   "actors": "Kate Winslet, Patrick Wilson, Noah Emmerich, Jackie Earle Harley, Jennifer Connelly",
-  "screenwriter": "Todd Field, Tom Perrotta"
+  "screenwriter": "Todd Field, Tom Perrotta",
+  "images": [
+    "/images/little-children-hero.jpg"
+  ]
 }

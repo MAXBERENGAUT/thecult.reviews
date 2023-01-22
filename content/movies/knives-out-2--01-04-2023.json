@@ -4,9 +4,11 @@
   "director": "Rian Johnson",
   "score": 6.5,
   "title": "Knives Out 2",
-  "image": "/images/aaaaqtbfoeb2b9etwefebtduszpqfx1rbppejvjscwrxdpu-ww5egtedd4jrnlclqrywbngyoeespmcyhse3cpa76wiyaktwsrr_lay9_kgvhrvsku-qtg4594owcpw3gilx6ok_9o7m43d4a0lj5aybmnofcr8.jpg",
   "year": "2022",
   "company": "Netflix",
-  "actors": "Daniel Craig, Edward Norton, Janelle Monáe, Kathryn Hahn, Leslie Odom Jr., Jessica Henwick, Madelyn Cline, Kate Hudson, Dave Bautista, Ethan Hawke",
-  "screenwriter": "Rian Johnson"
+  "actors": "Daniel Craig, Edward Norton, Janelle Mon\u00c3\u00a1e, Kathryn Hahn, Leslie Odom Jr., Jessica Henwick, Madelyn Cline, Kate Hudson, Dave Bautista, Ethan Hawke",
+  "screenwriter": "Rian Johnson",
+  "images": [
+    "/images/aaaaqtbfoeb2b9etwefebtduszpqfx1rbppejvjscwrxdpu-ww5egtedd4jrnlclqrywbngyoeespmcyhse3cpa76wiyaktwsrr_lay9_kgvhrvsku-qtg4594owcpw3gilx6ok_9o7m43d4a0lj5aybmnofcr8.jpg"
+  ]
 }

@@ -6,6 +6,8 @@
   "museum": "Albert and Shirley Small Special Collections Library",
   "score": 9.5,
   "title": "The Holsinger Studio Collection",
-  "image": "https://news.virginia.edu/sites/default/files/Inline_04_John_Mason_-_Holsinger_Exhibit_23HR_DA.jpg",
-  "year": "Late 1800s to early 1900s"
+  "year": "Late 1800s to early 1900s",
+  "images": [
+    "https://news.virginia.edu/sites/default/files/Inline_04_John_Mason_-_Holsinger_Exhibit_23HR_DA.jpg"
+  ]
 }

@@ -4,9 +4,11 @@
   "director": "Tom George",
   "score": 6.1,
   "title": "See How They Run",
-  "image": "/images/see-how-they-run-images-12.jpg",
   "year": "2022",
   "company": "Fox Searchlight Pictures",
   "actors": "Saoirse Ronan, Sam Rockwell, Adrien Brody, David Oyelowo",
-  "screenwriter": "Mark Chappell"
+  "screenwriter": "Mark Chappell",
+  "images": [
+    "/images/see-how-they-run-images-12.jpg"
+  ]
 }
