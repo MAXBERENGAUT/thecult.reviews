@@ -48,7 +48,7 @@ collections:
       - {label: "Score", name: "score", widget: "number", value_type: "float"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {
-          label: "Featured Images", name: "images", widget: "list", min: 1, 
+          label: "Featured Images", name: "images", widget: "list", min: 1, max: 100
           summary: '{{fields.image}}',
           field: {label: Image, name: image, widget: image}
         }
@@ -73,7 +73,7 @@ collections:
       - {label: "Score", name: "score", widget: "number", value_type: "float"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {
-          label: "Featured Images", name: "images", widget: "list", min: 1, 
+          label: "Featured Images", name: "images", widget: "list", min: 1, max: 100
           summary: '{{fields.image}}',
           field: {label: Image, name: image, widget: image}
         }
@@ -96,7 +96,7 @@ collections:
       - {label: "Score", name: "score", widget: "number", value_type: "float"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {
-          label: "Featured Images", name: "images", widget: "list", min: 1, 
+          label: "Featured Images", name: "images", widget: "list", min: 1, max: 100
           summary: '{{fields.image}}',
           field: {label: Image, name: image, widget: image}
         }
@@ -117,7 +117,7 @@ collections:
       - {label: "Score", name: "score", widget: "number", value_type: "float"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {
-          label: "Featured Images", name: "images", widget: "list", min: 1, 
+          label: "Featured Images", name: "images", widget: "list", min: 1, max: 100
           summary: '{{fields.image}}',
           field: {label: Image, name: image, widget: image}
         }
@@ -140,7 +140,7 @@ collections:
       - {label: "Score", name: "score", widget: "number", value_type: "float"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {
-          label: "Featured Images", name: "images", widget: "list", min: 1, 
+          label: "Featured Images", name: "images", widget: "list", min: 1, max: 100
           summary: '{{fields.image}}',
           field: {label: Image, name: image, widget: image}
         }
