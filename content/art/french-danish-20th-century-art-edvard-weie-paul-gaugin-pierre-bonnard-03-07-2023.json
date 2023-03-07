@@ -1,0 +1,19 @@
+{
+  "body": "The Ny Carlsberg Glyptotek is a nice art museum next door to the closed for not-summer Tivoli Gardens in Copenhagen. The recent art is upstairs, in two floors of halls that circle around the central courtyard. The first floor has Danish art from the 19th and 20th century, artists like Harald Giersing, Edvard Weie, Peter Hansen, Niels Larsen Stevns, Vilhelm Hammershoi, Anna Ancher, PC Skovgaard, and J.Th. Lundbye. These are nice paintings, often they are remarkable, and it is clear that for as small a country as Denmark is, their artistic tradition can rival any mid-sized European country. J.Th. Lundbye's style for landscapes seems to be almost equal of Constable and Turner, while Anna Ancher, Edvard Weie, and Harald Giersing took French impressionism successfully into the peculiar natural landscape around this country. Upstairs, in the rooms that unfortunately drew my attention more, were famous French paintings from the 19th century and early 20th century. The best of these, 'Two Children' by Paul Gaugin, 'Jockeys Before the Race' by Edgar Degas, 'The Dining Room' by Pierre Bonnard, 'Portrait of Monsieur Delaporte' by Henri de Toulouse-Latrec, 'Flood at Giverny' by Claude Monet, 'Mont Blanc seen from La Foucille, Storm Effect' by Theodore Rousseau, and 'Snow Landscape with Wild Boar' by Gustave Courbet are marvels of artistic inspiration and creativity. So much unique humanity can be drawn out of the mixing of paint on a canvas the size of a television, so much genuine connection, it is always amazing to me the great painters who are able, like classical musicians, to use a generic content template but infuse it with so much distinctive personal style that someone familiar with their work can spot it from a mile away. From these unique styles, they can develop and elaborate entirely independently, fusing together aspects of contemporary and old-fashioned art, developing works of art that deserve their viewing place in a museum with nothing else around.",
+  "artist": "Edvard Weie, Paul Gaugin, Pierre Bonnard",
+  "author": "Max Berengaut",
+  "creator": "Christine Buhl Andersen",
+  "museum": "Ny Carlsberg Glyptotek",
+  "score": 9.3,
+  "title": "French + Danish 20th century art",
+  "images": [
+    "/images/gaugin-2-children.png",
+    "/images/before-the-race.png",
+    "/images/bonnard.png",
+    "/images/execution-of-emperor-maximillian.png",
+    "/images/flood-at-giverny.png",
+    "/images/rosseau.png",
+    "/images/toulouse-latrec.png"
+  ],
+  "year": "2023"
+}
