@@ -24,7 +24,7 @@ function Review(review, index) {
         >
             <div className={styles.title + ' ' + fade}>
                 <div className={styles.upper}>
-                    {review.artist || review.director}
+                    {review.artist || review.director || review.writer}
                 </div>
                 <div className={styles.lower}>
                     {review.title}
