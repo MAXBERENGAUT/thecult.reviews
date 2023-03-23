@@ -119,28 +119,28 @@ collections:
           summary: '{{fields.image}}',
           field: {label: Image, name: image, widget: image}
         }
-      - {
-          label: "Exhibits", name: "exhibits", widget: "list", 
-          min: 1, max: 100,
-          summary: '{{fields.exhibit}}',
-          fields: 
-            - {label: "Title (Of Exhibit)", name: "exhibit", widget: "string"}
-            - {label: "Artist(s)", name: "artist", widget: "string"}
-            - {label: "Year", name: "year", widget: "string"}
-            - {label: "Creator", name: "creator", widget: "string"}
-            # - {label: "Floor", name: "floor", widget: "number", required: false}
+      - label: "Exhibits"
+        name: "exhibits"
+        widget: "list"
+        min: 1
+        max: 100
+        summary: '{{fields.exhibit}}'
+        fields: 
+          - {label: "Title (Of Exhibit)", name: "exhibit", widget: "string"}
+          - {label: "Artist(s)", name: "artist", widget: "string"}
+          - {label: "Year", name: "year", widget: "string"}
+          - {label: "Creator", name: "creator", widget: "string"}
+          # - {label: "Floor", name: "floor", widget: "number", required: false}
 
-            - {label: "Author", name: "author", widget: "string"}
-            - {label: "Score", name: "score", widget: "number", value_type: "float"}
-            - {label: "Body", name: "body", widget: "markdown"}
-            - {
-                label: "Featured Images", name: "images", widget: "list", 
-                min: 1, max: 100,
-                summary: '{{fields.image}}',
-                field: {label: Image, name: image, widget: image}
-              }
-        }
-
+          - {label: "Author", name: "author", widget: "string"}
+          - {label: "Score", name: "score", widget: "number", value_type: "float"}
+          - {label: "Body", name: "body", widget: "markdown"}
+          - {
+              label: "Featured Images", name: "images", widget: "list", 
+              min: 1, max: 100,
+              summary: '{{fields.image}}',
+              field: {label: Image, name: image, widget: image}
+            }
 
   - name: "Literature"
     extension: json
