@@ -22,7 +22,7 @@ collections:
     label: "Songs of the Month" # Used in the UI
     folder: "content/songs" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
+    slug: "{{title}}-{{month}}-{{day}}-{{year}}"
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Artist", name: "artist", widget: "string"}
@@ -37,7 +37,7 @@ collections:
     label: "Music"
     folder: "content/music"
     create: true
-    slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
+    slug: "{{title}}-{{month}}-{{day}}-{{year}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Artist", name: "artist", widget: "string"}
@@ -60,7 +60,7 @@ collections:
     label: "Movies"
     folder: "content/movies"
     create: true
-    slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
+    slug: "{{title}}-{{month}}-{{day}}-{{year}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Production Company", name: "company", widget: "string"}
@@ -86,7 +86,7 @@ collections:
     label: "Art (Museums)"
     folder: "content/art"
     create: true
-    slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
+    slug: "{{title}}-{{month}}-{{day}}-{{year}}"
     fields:
       - {label: "Title (Of Exhibit)", name: "title", widget: "string"}
       - {label: "Artist(s)", name: "artist", widget: "string"}
@@ -104,13 +104,51 @@ collections:
           field: {label: Image, name: image, widget: image}
         }
 
+  - name: "Museums"
+    extension: json
+    format: json
+    label: "Museums"
+    folder: "content/museums"
+    create: true
+    slug: "{{title}}-{{month}}-{{day}}-{{year}}"
+    fields:
+      - {label: "Museum", name: "title", widget: "string"}
+      - {
+          label: "Featured Images", name: "images", widget: "list", 
+          min: 1, max: 100,
+          summary: '{{fields.image}}',
+          field: {label: Image, name: image, widget: image}
+        }
+      - {
+          label: "Exhibits", name: "exhibits", widget: "list", 
+          min: 1, max: 100,
+          summary: '{{fields.exhibit}}',
+          fields: 
+            - {label: "Title (Of Exhibit)", name: "exhibit", widget: "string"}
+            - {label: "Artist(s)", name: "artist", widget: "string"}
+            - {label: "Year", name: "year", widget: "string"}
+            - {label: "Creator", name: "creator", widget: "string"}
+            # - {label: "Floor", name: "floor", widget: "number", required: false}
+
+            - {label: "Author", name: "author", widget: "string"}
+            - {label: "Score", name: "score", widget: "number", value_type: "float"}
+            - {label: "Body", name: "body", widget: "markdown"}
+            - {
+                label: "Featured Images", name: "images", widget: "list", 
+                min: 1, max: 100,
+                summary: '{{fields.image}}',
+                field: {label: Image, name: image, widget: image}
+              }
+        }
+
+
   - name: "Literature"
     extension: json
     format: json
     label: "Literature"
     folder: "content/literature"
     create: true
-    slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
+    slug: "{{title}}-{{month}}-{{day}}-{{year}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Author", name: "writer", widget: "string"}
@@ -132,7 +170,7 @@ collections:
     label: "Television"
     folder: "content/tv"
     create: true
-    slug: "{{title}}-{{fields.artist}}-{{month}}-{{day}}-{{year}}"
+    slug: "{{title}}-{{month}}-{{day}}-{{year}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Network", name: "network", widget: "string"}
