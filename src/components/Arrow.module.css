@@ -5,4 +5,5 @@
   text-decoration: none;
   color: black;
   font-size: 300%;
+  z-index: 100;
 }
