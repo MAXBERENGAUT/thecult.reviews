@@ -14,7 +14,6 @@ display_url: https://thecult.reviews
 
 # logo_url:
 
-
 collections:
   - name: "Songs" # Used in routes, e.g., /admin/collections/blog
     extension: json
@@ -24,12 +23,12 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{title}}-{{month}}-{{day}}-{{year}}"
     fields: # The fields for each document, usually in front matter
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Artist", name: "artist", widget: "string"}
-      - {label: "Album", name: "album", widget: "string"}
-      - {label: "Year", name: "year", widget: "string"}
-      - {label: "Cover", name: "cover", widget: "image"}
-      - {label: "YouTube Link", name: "yt_link", widget: "string"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Artist", name: "artist", widget: "string" }
+      - { label: "Album", name: "album", widget: "string" }
+      - { label: "Year", name: "year", widget: "string" }
+      - { label: "Cover", name: "cover", widget: "image" }
+      - { label: "YouTube Link", name: "yt_link", widget: "string" }
 
   - name: "Music"
     extension: json
@@ -39,19 +38,22 @@ collections:
     create: true
     slug: "{{title}}-{{month}}-{{day}}-{{year}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Artist", name: "artist", widget: "string"}
-      - {label: "Album", name: "album", widget: "string"}
-      - {label: "Year", name: "year", widget: "string"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Artist", name: "artist", widget: "string" }
+      - { label: "Album", name: "album", widget: "string" }
+      - { label: "Year", name: "year", widget: "string" }
 
-      - {label: "Author", name: "author", widget: "string"}
-      - {label: "Score", name: "score", widget: "number", value_type: "float"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Score", name: "score", widget: "number", value_type: "float" }
+      - { label: "Body", name: "body", widget: "markdown" }
       - {
-          label: "Featured Images", name: "images", widget: "list", 
-          min: 1, max: 100,
-          summary: '{{fields.image}}',
-          field: {label: Image, name: image, widget: image}
+          label: "Featured Images",
+          name: "images",
+          widget: "list",
+          min: 1,
+          max: 100,
+          summary: "{{fields.image}}",
+          field: { label: Image, name: image, widget: image },
         }
 
   - name: "Movies"
@@ -62,22 +64,30 @@ collections:
     create: true
     slug: "{{title}}-{{month}}-{{day}}-{{year}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Production Company", name: "company", widget: "string"}
-      - {label: "Year", name: "year", widget: "string"}
-      - {label: "Director", name: "director", widget: "string"}
-      - {label: "Screenwriter", name: "screenwriter", widget: "string"}
-      - {label: "Novelist", name: "novelist", widget: "string", required: false}
-      - {label: "Actors", name: "actors", widget: "string"}
-      
-      - {label: "Author", name: "author", widget: "string"}
-      - {label: "Score", name: "score", widget: "number", value_type: "float"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Production Company", name: "company", widget: "string" }
+      - { label: "Year", name: "year", widget: "string" }
+      - { label: "Director", name: "director", widget: "string" }
+      - { label: "Screenwriter", name: "screenwriter", widget: "string" }
       - {
-          label: "Featured Images", name: "images", widget: "list", 
-          min: 1, max: 100,
-          summary: '{{fields.image}}',
-          field: {label: Image, name: image, widget: image}
+          label: "Novelist",
+          name: "novelist",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Actors", name: "actors", widget: "string" }
+
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Score", name: "score", widget: "number", value_type: "float" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - {
+          label: "Featured Images",
+          name: "images",
+          widget: "list",
+          min: 1,
+          max: 100,
+          summary: "{{fields.image}}",
+          field: { label: Image, name: image, widget: image },
         }
 
   - name: "Art (Museums)"
@@ -88,20 +98,23 @@ collections:
     create: true
     slug: "{{title}}-{{month}}-{{day}}-{{year}}"
     fields:
-      - {label: "Title (Of Exhibit)", name: "title", widget: "string"}
-      - {label: "Artist(s)", name: "artist", widget: "string"}
-      - {label: "Year", name: "year", widget: "string"}
-      - {label: "Museum", name: "museum", widget: "string"}
-      - {label: "Creator", name: "creator", widget: "string"}
+      - { label: "Title (Of Exhibit)", name: "title", widget: "string" }
+      - { label: "Artist(s)", name: "artist", widget: "string" }
+      - { label: "Year", name: "year", widget: "string" }
+      - { label: "Museum", name: "museum", widget: "string" }
+      - { label: "Creator", name: "creator", widget: "string" }
 
-      - {label: "Author", name: "author", widget: "string"}
-      - {label: "Score", name: "score", widget: "number", value_type: "float"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Score", name: "score", widget: "number", value_type: "float" }
+      - { label: "Body", name: "body", widget: "markdown" }
       - {
-          label: "Featured Images", name: "images", widget: "list", 
-          min: 1, max: 100,
-          summary: '{{fields.image}}',
-          field: {label: Image, name: image, widget: image}
+          label: "Featured Images",
+          name: "images",
+          widget: "list",
+          min: 1,
+          max: 100,
+          summary: "{{fields.image}}",
+          field: { label: Image, name: image, widget: image },
         }
 
   - name: "Museums"
@@ -112,34 +125,45 @@ collections:
     create: true
     slug: "{{title}}-{{month}}-{{day}}-{{year}}"
     fields:
-      - {label: "Museum", name: "title", widget: "string"}
+      - { label: "Museum", name: "title", widget: "string" }
       - {
-          label: "Featured Images", name: "images", widget: "list", 
-          min: 1, max: 100,
-          summary: '{{fields.image}}',
-          field: {label: Image, name: image, widget: image}
+          label: "Featured Images",
+          name: "images",
+          widget: "list",
+          min: 1,
+          max: 100,
+          summary: "{{fields.image}}",
+          field: { label: Image, name: image, widget: image },
         }
       - label: "Exhibits"
         name: "exhibits"
         widget: "list"
         min: 1
         max: 100
-        summary: '{{fields.exhibit}}'
-        fields: 
-          - {label: "Title (Of Exhibit)", name: "exhibit", widget: "string"}
-          - {label: "Artist(s)", name: "artist", widget: "string"}
-          - {label: "Year", name: "year", widget: "string"}
-          - {label: "Creator", name: "creator", widget: "string"}
+        summary: "{{fields.exhibit}}"
+        fields:
+          - { label: "Title (Of Exhibit)", name: "exhibit", widget: "string" }
+          - { label: "Artist(s)", name: "artist", widget: "string" }
+          - { label: "Year", name: "year", widget: "string" }
+          - { label: "Creator", name: "creator", widget: "string" }
           # - {label: "Floor", name: "floor", widget: "number", required: false}
 
-          - {label: "Author", name: "author", widget: "string"}
-          - {label: "Score", name: "score", widget: "number", value_type: "float"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - { label: "Author", name: "author", widget: "string" }
           - {
-              label: "Artwork", name: "artwork", widget: "list", 
-              min: 1, max: 100,
-              summary: '{{fields.image}}',
-              field: {label: Image, name: image, widget: image}
+              label: "Score",
+              name: "score",
+              widget: "number",
+              value_type: "float",
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+          - {
+              label: "Artwork",
+              name: "artwork",
+              widget: "list",
+              min: 1,
+              max: 100,
+              summary: "{{fields.image}}",
+              field: { label: Image, name: image, widget: image },
             }
 
   - name: "Literature"
@@ -150,18 +174,21 @@ collections:
     create: true
     slug: "{{title}}-{{month}}-{{day}}-{{year}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Author", name: "writer", widget: "string"}
-      - {label: "Year", name: "year", widget: "string"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "writer", widget: "string" }
+      - { label: "Year", name: "year", widget: "string" }
 
-      - {label: "Author", name: "author", widget: "string"}
-      - {label: "Score", name: "score", widget: "number", value_type: "float"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Score", name: "score", widget: "number", value_type: "float" }
+      - { label: "Body", name: "body", widget: "markdown" }
       - {
-          label: "Featured Images", name: "images", widget: "list", 
-          min: 1, max: 100,
-          summary: '{{fields.image}}',
-          field: {label: Image, name: image, widget: image}
+          label: "Featured Images",
+          name: "images",
+          widget: "list",
+          min: 1,
+          max: 100,
+          summary: "{{fields.image}}",
+          field: { label: Image, name: image, widget: image },
         }
 
   - name: "Television"
@@ -172,18 +199,21 @@ collections:
     create: true
     slug: "{{title}}-{{month}}-{{day}}-{{year}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Network", name: "network", widget: "string"}
-      - {label: "Creator", name: "creator", widget: "string"}
-      - {label: "Actors", name: "actors", widget: "string"}
-      - {label: "Year", name: "year", widget: "string"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Network", name: "network", widget: "string" }
+      - { label: "Creator", name: "creator", widget: "string" }
+      - { label: "Actors", name: "actors", widget: "string" }
+      - { label: "Year", name: "year", widget: "string" }
 
-      - {label: "Author", name: "author", widget: "string"}
-      - {label: "Score", name: "score", widget: "number", value_type: "float"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Score", name: "score", widget: "number", value_type: "float" }
+      - { label: "Body", name: "body", widget: "markdown" }
       - {
-          label: "Featured Images", name: "images", widget: "list", 
-          min: 1, max: 100,
-          summary: '{{fields.image}}',
-          field: {label: Image, name: image, widget: image}
+          label: "Featured Images",
+          name: "images",
+          widget: "list",
+          min: 1,
+          max: 100,
+          summary: "{{fields.image}}",
+          field: { label: Image, name: image, widget: image },
         }

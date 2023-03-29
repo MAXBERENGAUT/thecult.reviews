@@ -11,8 +11,10 @@
   padding: 25px;
   text-align: center;
   width: fit-content;
-  border-left: 25px solid black;
-  border-right: 25px solid black;
+}
+
+#arrow {
+  font-size: 36%;
 }
 
 #title {

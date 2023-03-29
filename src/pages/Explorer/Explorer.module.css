@@ -1,0 +1,143 @@
+#title {
+  position: fixed;
+  padding: 2vw;
+  width: 20vw;
+  font-family: "Georgia";
+  font-size: 275%;
+  color: black;
+  word-spacing: 0.25em;
+}
+
+#list {
+  position: absolute;
+  text-align: center;
+
+  font-family: "Georgia";
+  color: black;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.review {
+  display: flex;
+  position: relative;
+  margin-top: 25vh;
+  margin-bottom: 25vh;
+
+  --box-size: 15vw;
+}
+
+.title {
+  opacity: 0;
+  position: absolute;
+  width: 15vw;
+  height: 15vw;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2vw;
+  cursor: default;
+}
+
+.title.fade-in {
+  cursor: auto;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  width: 5vw;
+  height: 2px;
+  background-color: black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.upper {
+  position: absolute;
+  bottom: 50%;
+  padding-bottom: 1.5vw;
+  left: 0;
+  width: inherit;
+}
+
+.lower {
+  position: absolute;
+  top: 50%;
+  padding-top: 1vw;
+  left: 0;
+  width: inherit;
+}
+
+/* via https://codepen.io/ericrasch/pen/kWWzzk */
+.line {
+  opacity: 0;
+  position: absolute;
+  height: 2px;
+  background-color: black;
+
+  left: 8vw;
+  right: calc(var(--box-size) + 2px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.image {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-around;
+  line-height: 150%;
+  word-spacing: 200%;
+
+  background-color: white;
+  border: black solid 2px;
+  font-size: 2vw;
+
+  width: var(--box-size);
+  /* height: var(--box-size); */
+  margin-left: 15vw;
+  margin-right: 5vw;
+  margin-top: auto;
+  margin-bottom: auto;
+  overflow-y: auto;
+}
+
+.score {
+  opacity: 0;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  background-color: white;
+  border: black solid 2px;
+  font-family: Garamond;
+  font-size: 6vw;
+
+  cursor: default;
+  text-decoration: none;
+  color: black;
+
+  width: var(--box-size);
+  height: var(--box-size);
+  margin: auto 0;
+
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .review {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+
+    --box-size: 30vw;
+  }
+
+  .new_title {
+    font-size: inherit;
+  }
+
+  .score {
+    font-size: 10vw;
+  }
+}

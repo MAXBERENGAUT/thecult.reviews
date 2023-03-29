@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
-import styles from './Lists.module.css'
+import { Link } from "react-router-dom";
+import styles from "./Lists.module.css";
 
-import Arrow from './Arrow';
+import Arrow from "../../components/Arrow";
 
 // const CATEGORIES = [
 //     { name: 'Music', slug: 'music' },
@@ -19,7 +19,7 @@ import Arrow from './Arrow';
 // function Category({name, slug}, index) {
 //     return (
 //         <h2 key={index}>
-//             <Link 
+//             <Link
 //                 to={slug}
 //                 reloadDocument
 //                 id={styles[slug]}
@@ -32,19 +32,19 @@ import Arrow from './Arrow';
 // }
 
 function Lists() {
-    // let items = CATEGORIES.map(Category)
+  // let items = CATEGORIES.map(Category)
 
-    return (
-        <main>
-            <Arrow />
-            <div id={styles.home}>
-                <h1 id={styles.title}>Lists</h1>
-                <Link to="../songs" reloadDocument className={styles.link}>
-                    Songs of the Month
-                </Link>
-            </div>
-        </main>
-    )
+  return (
+    <main>
+      <Arrow />
+      <div id={styles.home}>
+        <h1 id={styles.title}>Lists</h1>
+        <Link to="../songs" reloadDocument className={styles.link}>
+          Songs of the Month
+        </Link>
+      </div>
+    </main>
+  );
 }
 
-export default Lists
+export default Lists;
