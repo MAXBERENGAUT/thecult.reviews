@@ -41,4 +41,9 @@ export const CollectionLoader = {
       .context("/content/tv", true, /.json$/)
       .keys()
       .map((key) => extract("tv", key)),
+  memes: () =>
+    require
+      .context("/content/memes", true, /.json$/)
+      .keys()
+      .map((key) => extract("memes", key)),
 };

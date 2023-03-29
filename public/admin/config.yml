@@ -227,9 +227,7 @@ collections:
     slug: "{{title}}-{{month}}-{{day}}-{{year}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Creator", name: "creator", widget: "string", required: false }
       - { label: "Origin", name: "origin", widget: "string", required: false }
-      - { label: "Year", name: "year", widget: "string" }
 
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Score", name: "score", widget: "number", value_type: "float" }

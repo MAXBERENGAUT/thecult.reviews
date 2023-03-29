@@ -27,7 +27,7 @@ function Review(review, index) {
           {review.artist ||
             review.director ||
             review.writer ||
-            review.creator ||
+            review.origin ||
             "Unknown"}
         </div>
         <div className={styles.lower}>{review.title}</div>
