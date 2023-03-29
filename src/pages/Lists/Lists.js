@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./Lists.module.css";
 
-import Arrow from "../../components/Arrow";
+import Arrow from "components/Arrow";
 
 // const CATEGORIES = [
 //     { name: 'Music', slug: 'music' },

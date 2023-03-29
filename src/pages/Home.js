@@ -10,7 +10,7 @@ const CATEGORIES = [
   { name: "Television", slug: "tv" },
   { name: "Lists", slug: "lists" },
   { name: "Memes", slug: "" },
-  { name: "People", slug: "" },
+  { name: "People", slug: "people" },
   { name: "Write for Us", slug: "" },
 ];
 
