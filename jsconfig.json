@@ -2,13 +2,5 @@
   "compilerOptions": {
     "baseUrl": "src"
   },
-  "include": ["src"],
-  "scripts": {
-    "prettier:fix": "prettier --write \"src/**/*.js\""
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run prettier:fix"
-    }
-  },
+  "include": ["src"]
 }
