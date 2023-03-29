@@ -217,3 +217,29 @@ collections:
           summary: "{{fields.image}}",
           field: { label: Image, name: image, widget: image },
         }
+
+  - name: "Memes"
+    extension: json
+    format: json
+    label: "Memes"
+    folder: "content/memes"
+    create: true
+    slug: "{{title}}-{{month}}-{{day}}-{{year}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Creator", name: "creator", widget: "string", required: false }
+      - { label: "Origin", name: "origin", widget: "string", required: false }
+      - { label: "Year", name: "year", widget: "string" }
+
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Score", name: "score", widget: "number", value_type: "float" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - {
+          label: "Featured Images",
+          name: "images",
+          widget: "list",
+          min: 1,
+          max: 100,
+          summary: "{{fields.image}}",
+          field: { label: Image, name: image, widget: image },
+        }

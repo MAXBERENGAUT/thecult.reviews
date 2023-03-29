@@ -9,7 +9,7 @@ const CATEGORIES = [
   { name: "Literature", slug: "literature" },
   { name: "Television", slug: "tv" },
   { name: "Lists", slug: "lists" },
-  { name: "Memes", slug: "" },
+  { name: "Memes", slug: "memes" },
   { name: "People", slug: "people" },
   { name: "Write for Us", slug: "" },
 ];

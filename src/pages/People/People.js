@@ -9,7 +9,11 @@ function Lists() {
       <Arrow />
       <div id={styles.home}>
         <h1 id={styles.title}>People</h1>
-        <Link to="https://maxberengaut.com" reloadDocument className={styles.link}>
+        <Link
+          to="https://maxberengaut.com"
+          reloadDocument
+          className={styles.link}
+        >
           Max Berengaut
         </Link>
         <Link to="https://devines.org" reloadDocument className={styles.link}>
